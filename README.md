@@ -12,15 +12,15 @@ An application that finds the best music in the area you're in and plays it
 
 ###Features (Pick 5)
 
-*Geolocation
+* Geolocation
 
-*Front-end Framework (Bootstrap?)
+* Front-end Framework (Bootstrap?)
 
-*Report with times/graphs (Google graphs api)
+* Report with times/graphs (Google graphs api)
 
-*Custom Search
+* Custom Search
 
-*Emails/SMS
+* Emails/SMS
 
 ###Data Collected & Used###
 
@@ -28,5 +28,5 @@ Popular music data by location (Echonest)
 
 ###Algorithms or special Techniques###
 
-*Selection algorithm to select songs based on current location and user
+* Selection algorithm to select songs based on current location and user
 preferences. (e.g. genre, local bands only, etc.)
