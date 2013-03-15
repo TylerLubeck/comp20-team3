@@ -1,4 +1,4 @@
-[mockup]: readme_mages/mock_ups.png
+[mockup]: readme_images/mock_ups.png
 
 ##Road Trip Rockin'##
 
