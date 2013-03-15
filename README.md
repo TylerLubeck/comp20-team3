@@ -1,3 +1,5 @@
+[mockup]: readme_mages/mock_ups.png
+
 ##Road Trip Rockin'##
 
 ###Problem Statement###
@@ -49,3 +51,4 @@ Popular music data by location (Echonest)
 preferences. (e.g. genre, local bands only, etc.)
 
 ###Mock-Ups###
+![Computer Generated Mock-Ups][mockup]
