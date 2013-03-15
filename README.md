@@ -19,7 +19,8 @@ account. Once they create an account and give permission for us to use
 their location, music automatically starts to play. The music that plays
 is based upon what the top hits near their current location are. They are
 presented with some options, namely: "I like this" and "Save this for
-later."
+later." User's will also be given the ability to like the song and share
+it on facebook. 
 
 From here, two things happen:
 * If they choose "I like this", more music will be played that is similar
@@ -49,6 +50,28 @@ Popular music data by location (Echonest)
 
 * Selection algorithm to select songs based on current location and user
 preferences. (e.g. genre, local bands only, etc.)
+
+###APIs###
+* Google Maps (As required)
+* Echonest
+* Google Graphs
+* Potentially Youtube
+* Facebook
+
+###A Note on Music Providers###
+
+Two options:
+
+
+* I believe echonest provides 30 second song clips. We can safely use these.
+
+* We can use youtube videos. Put the video in a div and hide the div, and I
+  believe it will still play. This is very bad for mobile services as it
+  means more data usage and more bandwidth, but we will be able to get whole
+  songs.
+
+Either way, should this product go live, we should find a way to rent music.
+
 
 ###Mock-Ups###
 ![Computer Generated Mock-Ups][mockup]
