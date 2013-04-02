@@ -75,3 +75,6 @@ Either way, should this product go live, we should find a way to rent music.
 
 ###Mock-Ups###
 ![Computer Generated Mock-Ups][mockup]
+
+### Comments by Ming
+* Neat!  You can do that with EchoNest?
