@@ -1,0 +1,13 @@
+{
+    "name": "Comp-20-Final-Project",
+    "version": "0.0.1",
+    "dependencies": {
+        "express": "2.5.x",
+        "mongodb": "x",
+        "mongojs": "x"
+    },
+    "engines": {
+        "node": "0.8.x",
+        "npm": "1.1.x"
+    }
+}
