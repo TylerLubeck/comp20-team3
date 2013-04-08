@@ -22,7 +22,7 @@ app.all('/', function(req, res, next) {
  * Thoughts: Use a cookie to verify if someone is logged in
  *           Potentially 64-bit encode password on client side?
  */
-app.get('/login.json', function(req, res) {
+app.get('/login.json', function(request, response) {
     userName = request.query.UN;
     password = request.query.PW;
     cursor = db.users.find({'user':userName}, {'fields':'password'});
@@ -44,10 +44,14 @@ app.get('/doesExist', function(request, response) {
     userName = request.query.UN;
     cursor = db.users.count({'user':userName}, function(err, count) {
         outerCount = count;
+        console.log('inside callback' + outerCount);
     });
+        
+    console.log('outside callback' + outerCount);
 
-    if(outerCount = 0) {
+    if(outerCount == 0) {
         response.send('false');
+        return;
     } else {
         response.send('true');
     }
@@ -70,4 +74,14 @@ app.post('/makeUser', function(request, response) {
             else response.send('true');    
     });    
     
+});
+
+
+var port = process.env.PORT || 7000;
+app.listen(port, function() {
+    console.log("Listening on " + port);
+});
+
+process.on('SIGTERM', function() {
+    console.log('sig term');
 });
