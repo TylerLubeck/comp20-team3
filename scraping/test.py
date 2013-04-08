@@ -7,3 +7,7 @@ page = urllib2.urlopen(url)
 soup = BeautifulSoup(page)
 
 print(soup.prettify())
+
+titles = soup.findAll('p', attrs = {'class':'stnTitle'})
+for t in titles:
+	print t

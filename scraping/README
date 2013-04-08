@@ -1,3 +1,4 @@
-so far i've successfully just fetched all of the raw html from iheart
+right now just printing what i've got to screen
 
-(just run the script and it should print to screen)
+if you want to give it a go, run the python script after installing beautifulsoup via
+easy-install beautifulsoup4
