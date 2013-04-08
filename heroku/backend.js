@@ -1,3 +1,4 @@
+/* Set up Code... */
 var express = require('express');
 var dbURL = process.env.MONGOLAB_URI ||
             process.env.MONGOHQ_URL ||
@@ -8,12 +9,19 @@ var db = require('mongojs').connect(dbURL, collections);
 
 var app = express.createServer(express.logger());
 
-
+/* Allow cross-domain access */
 app.all('/', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
 });
 
+/* use site.com/login.json?UN=XXXXX&PW=XXXXX
+ *
+ * Returns true or false, if the password matches the account.
+ *
+ * Thoughts: Use a cookie to verify if someone is logged in
+ *           Potentially 64-bit encode password on client side?
+ */
 app.get('/login.json', function(req, res) {
     userName = request.query.UN;
     password = request.query.PW;
@@ -25,7 +33,13 @@ app.get('/login.json', function(req, res) {
     }
 });
 
-app.get('/doesExist', function(req, res) {
+
+/* use site.com/doesExist?UN=XXXXX 
+ * 
+ * Allows us to check if an account name exists, so that we don't have
+ * multiple people with the same account 
+ */
+app.get('/doesExist', function(request, response) {
     var outerCount = 0;
     userName = request.query.UN;
     cursor = db.users.count({'user':userName}, function(err, count) {
@@ -33,13 +47,27 @@ app.get('/doesExist', function(req, res) {
     });
 
     if(outerCount = 0) {
-        response.send('true');
-    } else {
         response.send('false');
+    } else {
+        response.send('true');
     }
 
 });
 
-app.post('/makeUser', function(req, res) {
+
+/* Use site.com/makeUser?UN=XXXX&PW=XXXX&EM=XXXX
+ *
+ * Should only be called if doesExist returns false
+ */
+app.post('/makeUser', function(request, response) {
+    userName = request.query.UN;
+    passWord = request.query.UN;
+    email = requst.query.EM; 
+
+    db.users.save({'user':userName, 'password':passWord, 'email':email},
+        function(err) {
+            if (err || !saved ) response.send('false');
+            else response.send('true');    
+    });    
     
 });
