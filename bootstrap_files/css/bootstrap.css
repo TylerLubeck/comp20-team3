@@ -228,7 +228,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #333333;
-  background-color: #0F3B5F;
+  background-color: #FFFFFF;
 }
 
 a {
@@ -2033,7 +2033,7 @@ table {
   border-top: 0;
 }
 
-.table tbody + tbody {
+.table t + tbody {
   border-top: 2px solid #dddddd;
 }
 
