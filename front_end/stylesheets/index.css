@@ -1,0 +1,13 @@
+#test{
+    float: right;
+}
+
+#geolocation{
+    outline-color: black;
+    outline-width: thin;
+    outline-style: solid;
+    background-color: #FFFFFF;
+    margin-left: 1%;
+    margin-right: 1%;
+    height: 500px;
+}
