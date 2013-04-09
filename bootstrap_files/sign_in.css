@@ -2,6 +2,7 @@
     outline-color: black;
     outline-width: thin;
     outline-style: solid;
+    background-color: #CCCC99;
     width: 45%;
     margin-left: 2%;
     height: 400px;
@@ -12,6 +13,7 @@
     outline-color: black;
     outline-width: thin;
     outline-style: solid;
+    background-color: #CCCC99;
     width: 45%;
     margin-right: 2%;
     height: 400px;
@@ -27,6 +29,7 @@
     outline-color: black;
     outline-width: thin;
     outline-style: solid;
+    background-color: #FFFFFF;
     margin-left: 1%;
     margin-right: 1%;
     height: 500px;
@@ -36,5 +39,6 @@
     outline-color: black;
     outline-width: thin;
     outline-style: solid;
+    background-color: #CCCC99;
     text-align: center;
 }
