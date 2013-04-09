@@ -3,8 +3,8 @@
 <head>
 	<title>Log In Page</title>	
 	<link type="text/css" rel="stylesheet" href="bootstrap_files/css/bootstrap.css"/>
-	<link type="text/css" rel="stylesheet" href="stylesheets/sign_in.css"/>
-</head>
+        <link type="text/css" rel="stylesheet" href="stylesheets/sign_in.css"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <body>
 	<form class="well from-search" align="left">
 		<img src="images/logo.png" alt="Road Trip Radio">
@@ -15,19 +15,20 @@
 		
 		<form id="log_in" class="span4">
 		    	<h1>Login</h1><br/>
-		    	<input type="text" class="span3" placeholder="Username"><br/>
-		    	<input type="password" class="span3" placeholder="Password"><br/>
-		    	<button class="btn btn-pimary">Login</button><br/>
+		    	<input id="UN-login" type="text" class="span3" placeholder="Username"><br/>
+		    	<input id="PW-login" type="password" class="span3" placeholder="Password"><br/>
+		    	<button id= "loginButton" class="btn btn-pimary">Login</button><br/>
 		</form>   
 		<form id="create_account" class="span4">
 	    	<h1>Create Account</h1><br/>
-	    	<input type="text" class="span3" placeholder="Username"><br/>
-	    	<input type="password" class="span3" placeholder="Password"><br/>
-	    	<input type="text" class="span3" placeholder="Name"><br/>
-	    	<input type="text" class="span3" placeholder="Email"><br/>
-	    	<button class="btn btn-pimary">Submit</button><br/>
+	    	<input id="UN-create" type="text" class="span3" placeholder="Username"><br/>
+	    	<input id="PW-create" type="password" class="span3" placeholder="Password"><br/>
+	    	<input id="name-create" type="text" class="span3" placeholder="Name"><br/>
+	    	<input id="email-create" type="text" class="span3" placeholder="Email"><br/>
+	    	<button id="createAccount" class="btn btn-pimary">Submit</button><br/>
 	    </form>
 	</div>
-	<script src="js/bootstrap.js"></script>
+	<script src="bootstrap_files/js/bootstrap.js"></script>
+        <script src='../scripts/login.js'></script>
 </body>
 </html>
