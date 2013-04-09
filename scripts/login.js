@@ -1,18 +1,21 @@
-var server = 'afternoon-anchorage-3983.herokuapp.com';
+var server = 'http://afternoon-anchorage-3983.herokuapp.com';
 
-function login(){
+function create(){
     var UN = document.getElementById('UN-create').value;
     var PW = document.getElementById('PW-create').value;
     var NAME = document.getElementById('name-create').value;
     var EM = document.getElementById('email-create').value; 
-    console.log('Logging in!');
+    console.log('Creating Account!');
     console.log(UN);
     console.log(PW);
-    var jqxhr = $.get(server + '/doesExist', {'UN':UN}, function(data) {
+    serverName = server + '/doesExist';
+    $.get(serverName, {'UN':UN}, function(data) {
         alert('checking for existing...');
         if (data == 'true') {
             console.log('Name already exists');
         } else {
+            alert('name is ok');
+        /*    
             $.post(server + '/makeUser', {'UN':UN, 'PW':PW, 'EM':EM}, 
                     function(data) {
                         if (data == 'false') {
@@ -22,9 +25,10 @@ function login(){
                         }
                 
             });
+        */
         }
     });
-    jqxhr.done(function() {alert('done');});
+//    jqxhr.done(function() {alert('done');});
 //    .fail(function() {alert('failure');)
 //    .always(function() {alert('always'))};
 
@@ -32,4 +36,5 @@ function login(){
 }
 
 createButton = document.getElementById('createAccount');
-createButton.addEventListener('click', login);
+
+createButton.addEventListener('click', create);
