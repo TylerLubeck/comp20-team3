@@ -42,35 +42,33 @@ app.get('/login.json', function(request, response) {
 app.get('/doesExist', function(request, response) {
     var outerCount = 0;
     userName = request.query.UN;
+    
     cursor = db.users.count({'user':userName}, function(err, count) {
         outerCount = count;
         console.log('inside callback' + outerCount);
+        if(count == 0) {
+            response.send('false');
+        } else {
+            response.send('true');
+        }
     });
-        
-    console.log('outside callback' + outerCount);
-
-    if(outerCount == 0) {
-        response.send('false');
-        return;
-    } else {
-        response.send('true');
-    }
-
 });
 
 
 /* Use site.com/makeUser?UN=XXXX&PW=XXXX&EM=XXXX
  *
  * Should only be called if doesExist returns false
+ *
+ * MUST CHECK /doesExist BEFORE CALLING THIS. VERY IMPORTANT.
  */
 app.post('/makeUser', function(request, response) {
     userName = request.query.UN;
     passWord = request.query.UN;
-    email = requst.query.EM; 
+    email = request.query.EM; 
 
     db.users.save({'user':userName, 'password':passWord, 'email':email},
         function(err) {
-            if (err || !saved ) response.send('false');
+            if (err) response.send('false');
             else response.send('true');    
     });    
     
