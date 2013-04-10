@@ -12,7 +12,7 @@ if(r.status_code == requests.codes.ok):
 
 	addresses = soup.findAll('option', attrs = {})
 	results = []
-	with open('some.csv', 'wb') as f:
+	with open('extractedUrls.csv', 'wb') as f:
 		writer = csv.writer(f)
 		for a in addresses:
 			writer.writerow([a.text, a.get('value')])
