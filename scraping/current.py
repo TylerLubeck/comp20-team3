@@ -15,7 +15,7 @@ stations = soup.findAll('p', attrs = {'class':'stnTitle'})
 
 results = {}
 for itr in range(0,len(stations)-1):
-	title = stations[itr].find('a').text
-	link = stations[itr].find('a').get('href')
-	print(title)
-	print(link)
+	t = stations[itr].find('a').text
+	l = stations[itr].find('a').get('href')
+	print(t)
+	print(l)
