@@ -1,14 +1,19 @@
 import urllib2
 from bs4 import BeautifulSoup
+import json
 
-url = "http://www.iheart.com/find/markets/Boston-MA-99/"
+base_url = 'http://www.iheart.com'
+with open('scraped_urls.json', 'r') as infile:
+	urls = json.load(infile)
 
-page = urllib2.urlopen(url)
-
+key = 'Washington'
+print("scraping url: " + base_url + urls[key])
+page = urllib2.urlopen(base_url + urls[key])
 soup = BeautifulSoup(page)
 
-print(soup.prettify())
-
-titles = soup.findAll('p', attrs = {'class':'stnTitle'})
-for t in titles:
-	print t
+stations = soup.findAll('p', attrs = {'class':'stnTitle'})
+for itr in range(0,len(stations)-1):
+	title = stations[itr].find('a').text
+	link = stations[itr].find('a').get('href')
+	print(title)
+	print(link)
