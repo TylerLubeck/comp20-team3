@@ -1,4 +1,4 @@
-#log_in{
+form#log_in{
     outline-color: black;
     outline-width: thin;
     outline-style: solid;
@@ -9,7 +9,7 @@
     text-align: center;
 }
 
-#create_account{
+form#create_account{
     outline-color: black;
     outline-width: thin;
     outline-style: solid;
@@ -21,11 +21,11 @@
     float: right;
 }
 
-#test{
+input#search_bar{
     float: right;
 }
 
-#test2{
+div#create_format{
     outline-color: black;
     outline-width: thin;
     outline-style: solid;
@@ -35,7 +35,7 @@
     height: 500px;
 }
 
-#test3{
+div#header_format{
     outline-color: black;
     outline-width: thin;
     outline-style: solid;
