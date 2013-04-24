@@ -40,16 +40,16 @@ app.get('/login.json', function(request, response) {
  * multiple people with the same account 
  */
 app.get('/doesExist', function(request, response) {
-    var outerCount = 0;
     userName = request.query.UN;
-    
-    cursor = db.users.count({'user':userName}, function(err, count) {
-        outerCount = count;
-        console.log('inside callback' + outerCount);
-        if(count == 0) {
-            response.send('false');
+    db.users.find({'user':userName}, function(err, cursor){
+        if(err) {
+            console.log('error' + err);
+            reponse.send('error');
+        }
+        if (cursor.length > 0 ) {
+            response.send('true');   
         } else {
-            response.send('true');
+            response.send('false');
         }
     });
 });
