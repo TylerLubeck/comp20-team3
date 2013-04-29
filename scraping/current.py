@@ -16,6 +16,8 @@ for key in urls:
 
 	locStations = []
 	for itr in range(0,len(stations)-1):
+		if itr >= 5:
+			break
 		thisStation = {}
 		title = stations[itr].find('a').text
 		link = stations[itr].find('a').get('href')
@@ -24,7 +26,7 @@ for key in urls:
 		page = urllib2.urlopen(base_url + link)
 		soup = BeautifulSoup(page)
 		facts = soup.find('section', attrs = {'class':'subColRight stnInfo clearfix'})
-		website = soup.find('a', attrs = {'class':'seeAll'})
+		website = soup.find('a', attrs = {'class':'seeAll'}).get('href')
 		items = facts.findAll('li')
 		for i in items:
 			if 'Genre' in str(i):
@@ -35,6 +37,7 @@ for key in urls:
 		thisStation['genre'] = genre
 		thisStation['title'] = title
 		thisStation['link'] = link
+		print(thisStation)
 		locStations.append(thisStation)
 	results[key] = locStations
 with open('radio_stations.json', 'w') as outfile:
