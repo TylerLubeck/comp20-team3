@@ -14,11 +14,28 @@ for key in urls:
 
 	stations = soup.findAll('p', attrs = {'class':'stnTitle'})
 
-	allLinks = {}
+	locStations = []
 	for itr in range(0,len(stations)-1):
+		thisStation = {}
 		title = stations[itr].find('a').text
 		link = stations[itr].find('a').get('href')
-		allLinks[title] = link
-	results[key] = allLinks
+
+		print("  scraping url: " + base_url + link + " as " + title)
+		page = urllib2.urlopen(base_url + link)
+		soup = BeautifulSoup(page)
+		facts = soup.find('section', attrs = {'class':'subColRight stnInfo clearfix'})
+		website = soup.find('a', attrs = {'class':'seeAll'})
+		items = facts.findAll('li')
+		for i in items:
+			if 'Genre' in str(i):
+				genre = i.find('a').text
+				genre = genre[:-2]
+
+		thisStation['website'] = website
+		thisStation['genre'] = genre
+		thisStation['title'] = title
+		thisStation['link'] = link
+		locStations.append(thisStation)
+	results[key] = locStations
 with open('radio_stations.json', 'w') as outfile:
 	json.dump(results, outfile)
