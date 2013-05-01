@@ -37,6 +37,7 @@ h3
 table
 {
 	background-color: #FFFFFF;
+    padding: 50px;
 }
 
 .header
@@ -68,7 +69,11 @@ table
 
 .bio
 {
+    padding-top: 10px;
+    padding-bottom: 10px;
     height: 300px;
+    background-color: #E0E0E0;
+    border-radius: 15px;
 }
 
 .bio_name
@@ -88,6 +93,7 @@ table
     padding-left: 40px;
     padding-right: 10px;
     padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 #login
@@ -108,28 +114,26 @@ table
 
 #musicinfo
 {
-    outline-color: black;
-    outline-width: thin;
-    outline-style: solid;
-    background-color: #CCCC99;
-    width: 45%;
+    background-color: #E0E0E0;
+    width: 60%;
     margin-right: 2%;
     height: 400px;
     text-align: center;
     float: right;
+    padding: 10px;
+    border-radius: 15px;
 }
 
 #accountmng
 {
-	outline-color: black;
-    outline-width: thin;
-    outline-style: solid;
-    background-color: #CCCC99;
-    width: 45%;
+    background-color: #E0E0E0;
+    width: 30%;
     margin-left: 2%;
     height: 400px;
     text-align: center;
     float: left;
+    padding: 10px;
+    border-radius: 15px;
 }
 
 #map_canvas
