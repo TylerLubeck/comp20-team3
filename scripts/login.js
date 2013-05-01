@@ -5,54 +5,47 @@ function create(){
     var PW = document.getElementById('PW-create').value;
     var NAME = document.getElementById('name-create').value;
     var EM = document.getElementById('email-create').value; 
-    console.log('Creating Account!');
-    console.log(UN);
-    console.log(PW);
     serverName = server + '/doesExist';
     $.get(serverName, {'UN':UN}, function(data) {
-        alert('checking for existing...');
+        console.log(data);
         if (data == 'true') {
-            console.log('Name already exists');
+            $('#user_taken').show();
         } else {
-            alert('name is ok');
-        /*    
-            $.post(server + '/makeUser', {'UN':UN, 'PW':PW, 'EM':EM}, 
+            $('#user_taken').hide();
+            serverName = server + '/makeUser';
+            $.post(serverName, {'UN':UN, 'PW':PW, 'EM':EM, 'realName':NAME}, 
                     function(data) {
-                        if (data == 'false') {
-                            alert('post error!');
-                        } else {
-                            alert('added');
-                        }
-                
+                        alert('REDIRECT NOW');
             });
-        */
+        }
+    });
+}
+
+function login() {
+    var UN = document.getElementById('UN-login').value;
+    var PW = document.getElementById('PW-login').value;
+    serverName = server + '/login.json';
+    $.get(serverName, {'UN':UN, 'PW':PW}, function(data) {
+        console.log('got!');
+        if (data != 'false') {
+            console.log(data);
+            localStorage.userName = data.name;
+            console.log(localStorage.userName);
+            window.location.href = 'your_music.html';
+        } else {
+            $('#login_failed').show(); 
         }
     })
-    .done(function(data) {
-      alert('done?');  
+    .done(function() {
+        console.log('DONE');
     })
-    .error(function(jqXHR, textStatus, errorThrown) {
-        console.log('FUUUUUUUUUUCK');
-        console.log(jqXHR);
-        console.log(textStatus);
-        console.log(errorThrown);
-        if (textStatus == 'timeout')
-            console.log('No Response');
-
-        if (textStatus == 'error')
-            console.log(errorThrown);
-    })
-    .fail(function(data) {
-        alert('error');
+    .fail(function() {
+        console.log('FAIL');
     });
-    
-//    jqxhr.done(function() {alert('done');});
-//    .fail(function() {alert('failure');)
-//    .always(function() {alert('always'))};
-
-
 }
 
 createButton = document.getElementById('createAccount');
+loginButton = document.getElementById('loginButton');
 
 createButton.addEventListener('click', create);
+loginButton.addEventListener('click', login);
