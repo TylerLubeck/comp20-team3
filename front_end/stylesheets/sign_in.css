@@ -67,6 +67,10 @@ div#header_format{
     text-align: center;
 }
 
+p#login_failed{
+    display: none;
+}
+
 p#user_taken{
 	display: none;
 }

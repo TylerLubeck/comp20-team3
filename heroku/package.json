@@ -2,7 +2,7 @@
     "name": "Comp-20-Final-Project",
     "version": "0.0.1",
     "dependencies": {
-        "express": "3.x",
+        "express": "latest",
         "mongodb": "x",
         "mongojs": "x"
     },

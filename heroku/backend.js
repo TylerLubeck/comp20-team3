@@ -8,7 +8,7 @@ var collections = ['users'];
 var db = require('mongojs').connect(dbURL, collections);
 
 var app = express();
-
+app.use(express.bodyParser());
 /* Allow cross-domain access */
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -25,11 +25,12 @@ app.all('*', function(req, res, next) {
  *           Potentially 64-bit encode password on client side?
  */
 app.get('/login.json', function(request, response) {
-    userName = request.query.UN;
-    password = request.query.PW;
-    cursor = db.users.find({'user':userName}, {'fields':'password'});
+    userName = request.body.UN;
+    password = request.body.PW;
+    cursor = db.users.find({'user':userName});
     if(cursor && cursor.password == password) {
-        response.send('true'); 
+        console.log(cursor.realName);
+        response.send({'name':cursor.realName}); 
     } else {
         response.send('false');
     }
@@ -55,7 +56,6 @@ app.get('/doesExist', function(request, response) {
         }
 	console.log(cursor);
     console.log('cursor length is: ' + cursor.length);
-	console.log(err);
         if (cursor.length > 0 ) {
             response.send('true');   
         } else {
@@ -73,31 +73,14 @@ app.get('/doesExist', function(request, response) {
  */
 
 app.post('/makeUser', function(request, response) {
-    console.log(request.query);
-    console.log('---------------------');
-    //console.log(request);
-    console.log('---------------------');
-    userName = request.query.UN;
-    passWord = request.query.PW;
-    email = request.query.EM; 
-    console.log(userName);
-    console.log(passWord);
-    console.log(email);
-    db.users.save({'user':userName, 'password':passWord, 'email':email});
+    userName = request.body.UN;
+    passWord = request.body.PW;
+    realName = request.body.realName;
+    email = request.body.EM; 
+    console.log(request.body);
+    db.users.save({'user':userName, 'password':passWord, 'email':email,
+                    'realName':realName});
     response.send('success');
-/*
-        function(err) {
-            if (err) {
-                console.log('fuck damnit');
-                response.send('false');
-            }
-            else { 
-                console.log('yay!');
-                response.send('true');    
-                
-            }
-    });    
-*/    
 });
 
 
@@ -108,8 +91,4 @@ app.get('/*', function(request, response) {
 var port = process.env.PORT || 7000;
 app.listen(port, function() {
     console.log("Listening on " + port);
-});
-
-process.on('SIGTERM', function() {
-    console.log('sig term');
 });
