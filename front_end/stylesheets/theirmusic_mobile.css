@@ -1,12 +1,8 @@
 #chart_div{
 	float: left;
-	width : 45%; 
-	height:300px;
 }
 #chart_div2{
-	float: right;
-	width: 45%;
-	height: 300;
+	float:right;
 }
 input#search_bar{
 	    float: right;
