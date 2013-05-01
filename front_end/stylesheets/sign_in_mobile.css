@@ -1,3 +1,7 @@
+#login{
+	float: right;
+}
+
 form#log_in{
     outline-color: black;
     outline-width: thin;
