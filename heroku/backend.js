@@ -13,6 +13,7 @@ var app = express.createServer(express.logger());
 app.all('/', function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'X-Requested-With');
+    next();
 });
 
 /* use site.com/login.json?UN=XXXXX&PW=XXXXX
@@ -70,8 +71,7 @@ app.get('/doesExist', function(request, response) {
  * MUST CHECK /doesExist BEFORE CALLING THIS. VERY IMPORTANT.
  */
 
-//TODO turn this bck in to a POST
-app.get('/makeUser', function(request, response) {
+app.post('/makeUser', function(request, response) {
     console.log(request.query);
     console.log('---------------------');
     //console.log(request);
