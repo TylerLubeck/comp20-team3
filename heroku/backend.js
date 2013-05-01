@@ -6,7 +6,7 @@ var dbURL = process.env.MONGOLAB_URI ||
 
 var collections = ['users'];            
 var db = require('mongojs').connect(dbURL, collections);
-
+   
 var app = express();
 app.use(express.bodyParser());
 /* Allow cross-domain access */
