@@ -29,7 +29,8 @@ app.get('/login.json', function(request, response) {
     password = request.body.PW;
     cursor = db.users.find({'user':userName});
     if(cursor && cursor.password == password) {
-        console.log(cursor.realName);
+        console.log('CURSOR: ' + cursor);
+        console.log('REALNAME IS: ' + cursor.realName);
         response.send({'name':cursor.realName}); 
     } else {
         response.send('false');
