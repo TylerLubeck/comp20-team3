@@ -1,0 +1,9 @@
+#chart_div{
+	float: left;
+}
+#chart_div2{
+	float:right;
+}
+input#search_bar{
+	    float: right;
+}

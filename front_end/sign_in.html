@@ -3,15 +3,17 @@
 <head>
 	<title>Log In Page</title>	
 	<link type="text/css" rel="stylesheet" href="bootstrap_files/css/bootstrap.css"/>
-        <link type="text/css" rel="stylesheet" href="stylesheets/sign_in.css"/>
-        <script src='../scripts/jquery-1.9.1.min.js'></script>
+	<link rel="stylesheet" media="only screen and (max-device-width: 960px)" href="stylesheets/sign_in_mobile.css"/>
+	<link rel="stylesheet" media="only screen and (min-device-width: 961px)" href="stylesheets/sign_in.css"/>
+    <script src='../scripts/jquery-1.9.1.min.js'></script>
+</head>
 <body>
 	<form class="well from-search" align="left">
 		<img src="images/logo.png" alt="Road Trip Radio">
-		<input id="test" type="text" class="span3 search-query" placeholder="Search...">
+		<input id="search_bar" type="text" class="span3 search-query" placeholder="Search...">
 	</form>
-	<div id="test2">
-		<div id="test3"><h1>Create Account or Log In</h1></div>
+	<div id="create_format">
+		<div id="header_format"><h1>Create Account or Log In</h1></div>
 		
 		<form id="log_in" class="span4">
 		    	<h1>Login</h1><br/>
@@ -22,6 +24,7 @@
 		<form id="create_account" class="span4">
 	    	<h1>Create Account</h1><br/>
 	    	<input id="UN-create" type="text" class="span3" placeholder="Username"><br/>
+	    	<p id="user_taken">That name is unavailable.</p>
 	    	<input id="PW-create" type="password" class="span3" placeholder="Password"><br/>
 	    	<input id="name-create" type="text" class="span3" placeholder="Name"><br/>
 	    	<input id="email-create" type="text" class="span3" placeholder="Email"><br/>

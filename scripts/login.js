@@ -1,5 +1,5 @@
 var server = 'http://afternoon-anchorage-3983.herokuapp.com';
-
+//var server = 'localhost:5000';
 function create(){
     var UN = document.getElementById('UN-create').value;
     var PW = document.getElementById('PW-create').value;
@@ -27,6 +27,12 @@ function create(){
             });
         */
         }
+    })
+    .done(function(data) {
+      alert('done?');  
+    })
+    .error(function(data) {
+      alert('error!' + d);  
     });
 //    jqxhr.done(function() {alert('done');});
 //    .fail(function() {alert('failure');)

@@ -26,7 +26,7 @@
 ##
 ## Usage: sh commitToHeroku.sh "Commit message here"
 
-HEROKU_APP="../../herokuFinalProject"
+HEROKU_APP="../../afternoon-anchorage-3983"
 GROUP_PROJECT=`pwd`
 
 
