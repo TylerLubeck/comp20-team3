@@ -1,6 +1,6 @@
 var server = 'http://afternoon-anchorage-3983.herokuapp.com';
 //var server = 'localhost:5000';
-alert('script loaded');
+alert('Alerting for safety');
 function create(){
     var UN = document.getElementById('UN-create').value;
     var PW = document.getElementById('PW-create').value;
