@@ -3,8 +3,9 @@
 <head>
 	<title>Log In Page</title>	
 	<link type="text/css" rel="stylesheet" href="bootstrap_files/css/bootstrap.css"/>
-        <link type="text/css" rel="stylesheet" href="stylesheets/sign_in.css"/>
-        <script src='../scripts/jquery-1.9.1.min.js'></script>
+	<link rel="stylesheet" media="only screen and (max-device-width: 960px)" href="stylesheets/sign_in_mobile.css"/>
+	<link rel="stylesheet" media="only screen and (min-device-width: 961px)" href="stylesheets/sign_in.css"/>
+    <script src='../scripts/jquery-1.9.1.min.js'></script>
 </head>
 <body>
 	<form class="well from-search" align="left">
@@ -23,6 +24,7 @@
 		<form id="create_account" class="span4">
 	    	<h1>Create Account</h1><br/>
 	    	<input id="UN-create" type="text" class="span3" placeholder="Username"><br/>
+	    	<p id="user_taken">That name is unavailable.</p>
 	    	<input id="PW-create" type="password" class="span3" placeholder="Password"><br/>
 	    	<input id="name-create" type="text" class="span3" placeholder="Name"><br/>
 	    	<input id="email-create" type="text" class="span3" placeholder="Email"><br/>

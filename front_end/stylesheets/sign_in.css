@@ -42,3 +42,7 @@ div#header_format{
     background-color: #CCCC99;
     text-align: center;
 }
+
+p#user_taken{
+	display: none;
+}
