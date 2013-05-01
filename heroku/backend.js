@@ -8,7 +8,7 @@ var collections = ['users'];
 var db = require('mongojs').connect(dbURL, collections);
 
 var app = express();
-
+app.use(express.bodyParser());
 /* Allow cross-domain access */
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -73,13 +73,13 @@ app.get('/doesExist', function(request, response) {
  */
 
 app.post('/makeUser', function(request, response) {
-    console.log(request.query);
+    console.log(request.body);
     console.log('---------------------');
-    //console.log(request);
+    console.log(request.body.UN);
     console.log('---------------------');
-    userName = request.query.UN;
-    passWord = request.query.PW;
-    email = request.query.EM; 
+    userName = request.body.UN;
+    passWord = request.body.PW;
+    email = request.body.EM; 
     console.log(userName);
     console.log(passWord);
     console.log(email);
@@ -108,8 +108,4 @@ app.get('/*', function(request, response) {
 var port = process.env.PORT || 7000;
 app.listen(port, function() {
     console.log("Listening on " + port);
-});
-
-process.on('SIGTERM', function() {
-    console.log('sig term');
 });
