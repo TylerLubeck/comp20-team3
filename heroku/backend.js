@@ -43,13 +43,16 @@ app.get('/doesExist', function(request, response) {
     userName = request.query.UN;
     if(!userName) {
         response.send('error');
+        return;
     }
     db.users.find({'user':userName}, function(err, cursor){
         if(err) {
             console.log('error' + err);
             response.send('error');
+            return;
         }
 	console.log(cursor);
+    console.log('cursor length is: ' + cursor.length);
 	console.log(err);
         if (cursor.length > 0 ) {
             response.send('true');   
@@ -67,17 +70,33 @@ app.get('/doesExist', function(request, response) {
  * MUST CHECK /doesExist BEFORE CALLING THIS. VERY IMPORTANT.
  */
 
-app.post('/makeUser', function(request, response) {
+//TODO turn this bck in to a POST
+app.get('/makeUser', function(request, response) {
+    console.log(request.query);
+    console.log('---------------------');
+    //console.log(request);
+    console.log('---------------------');
     userName = request.query.UN;
-    passWord = request.query.UN;
+    passWord = request.query.PW;
     email = request.query.EM; 
-
-    db.users.save({'user':userName, 'password':passWord, 'email':email},
+    console.log(userName);
+    console.log(passWord);
+    console.log(email);
+    db.users.save({'user':userName, 'password':passWord, 'email':email});
+    response.send('success');
+/*
         function(err) {
-            if (err) response.send('false');
-            else response.send('true');    
+            if (err) {
+                console.log('fuck damnit');
+                response.send('false');
+            }
+            else { 
+                console.log('yay!');
+                response.send('true');    
+                
+            }
     });    
-    
+*/    
 });
 
 
