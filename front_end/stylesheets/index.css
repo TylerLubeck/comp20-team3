@@ -1,7 +1,15 @@
+html
+{
+    height: 100%;
+}
+
 body
 {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", 
                      "Helvetica Neue", sans-serif;
+    height: 60%;
+    margin : 0px;
+    padding: 0px;
 }
 
 P
@@ -47,6 +55,11 @@ table
     text-align: center;
 }
 
+#login
+{
+    float: right;
+}
+
 #geolocation
 {
     outline-color: black;
@@ -82,4 +95,21 @@ table
     height: 400px;
     text-align: center;
     float: left;
+}
+
+#map_canvas
+{
+    height: 100%;
+    width: 100%;
+}
+
+#logo
+{
+    height: 150px;
+    width: 320px;
+}
+
+#search
+{
+    float: right;
 }
