@@ -7,7 +7,7 @@ body
 {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", 
                      "Helvetica Neue", sans-serif;
-    height: 60%;
+    height: 70%;
     margin : 0px;
     padding: 0px;
 }
@@ -31,8 +31,9 @@ table
 
 .header
 {
-    float: right;
-    text-align: right;
+    margin-bottom: 0px;
+    padding: 10px;
+    padding-bottom: 0px;
 }
 
 .content
