@@ -17,3 +17,10 @@
 input#search_bar{
 	    float: right;
 }
+
+.header
+{
+    margin-bottom: 0px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
