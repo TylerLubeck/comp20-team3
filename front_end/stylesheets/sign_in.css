@@ -2,6 +2,12 @@
 	float: right;
 }
 
+#logo
+{
+    height: 150px;
+    width: 320px;
+}
+
 form#log_in{
     outline-color: black;
     outline-width: thin;
