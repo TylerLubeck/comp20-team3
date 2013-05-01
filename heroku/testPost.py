@@ -4,15 +4,18 @@ import urllib
 import httplib
 
 localURL = 'localhost:5000'
+#localURL = 'afternoon-anchorage-3983.herokuapp.com'
 server = httplib.HTTPConnection(localURL)
 
 makeUser = '/makeUser'
 doesExist = '/doesExist'
 login = '/login.json'
 
-makeUserValues = {'UN' : 'joey',
-                  'PW' : 'johnnyboy',
-                  'EM' : 'someEmail'}
+#makeUserValues = {'UN' : 'joey',
+#                  'PW' : 'johnnyboy',
+#                  'EM' : 'someEmail'}
+
+makeUserValues=[('UN', 'joey'), ('PW', 'johnnyboy'), ('EM', 'someEmail')]
 
 doesExistValues = {'UN' : 'joey'}
 

@@ -29,17 +29,19 @@
 HEROKU_APP="../../afternoon-anchorage-3983"
 GROUP_PROJECT=`pwd`
 
-
-COMMITMESSAGE=$1
-echo $COMMITMESSAGE
-
-
 cp -r * $HEROKU_APP
-cd $HEROKU_APP
+
+if [ "$1" =  "-commit" ];then
+	COMMITMESSAGE=$2
+	echo $COMMITMESSAGE
+
+	cd $HEROKU_APP
 
 
-git add *
-git commit -m "$COMMITMESSAGE"
-git push heroku master
+	git add *
+	git commit -m "$COMMITMESSAGE"
+	git push origin master
 
 cd $GROUP_PROJECT
+
+fi
