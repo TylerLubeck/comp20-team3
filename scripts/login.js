@@ -31,8 +31,8 @@ function create(){
     .done(function(data) {
       alert('done?');  
     })
-    .error(function(data) {
-      alert('error!' + d);  
+    .fail(function(data) {
+        alert('error');
     });
 //    jqxhr.done(function() {alert('done');});
 //    .fail(function() {alert('failure');)
