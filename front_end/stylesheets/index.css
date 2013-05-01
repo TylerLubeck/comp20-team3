@@ -47,6 +47,11 @@ table
     text-align: center;
 }
 
+#login
+{
+    float: right;
+}
+
 #geolocation
 {
     outline-color: black;
