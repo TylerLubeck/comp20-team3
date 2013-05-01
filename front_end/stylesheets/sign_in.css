@@ -2,6 +2,27 @@
 	float: right;
 }
 
+body{
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", 
+                     "Helvetica Neue", sans-serif;
+    height: 70%;
+    margin : 0px;
+    padding: 0px;
+}
+
+.header
+{
+    margin-bottom: 0px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+#logo
+{
+    height: 150px;
+    width: 320px;
+}
+
 form#log_in{
     outline-color: black;
     outline-width: thin;
@@ -44,6 +65,10 @@ div#header_format{
     outline-style: solid;
     background-color: #CCCC99;
     text-align: center;
+}
+
+p#login_failed{
+    display: none;
 }
 
 p#user_taken{

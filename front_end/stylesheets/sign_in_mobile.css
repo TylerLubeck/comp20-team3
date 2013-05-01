@@ -2,6 +2,19 @@
 	float: right;
 }
 
+#logo
+{
+    height: 150px;
+    width: 320px;
+}
+
+.header
+{
+    margin-bottom: 0px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
 form#log_in{
     outline-color: black;
     outline-width: thin;
