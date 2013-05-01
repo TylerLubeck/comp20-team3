@@ -1,0 +1,15 @@
+MAJOR
+- Displaying top five radio stations
+- User input on top five radio stations (1-5 scale/on commercial)
+- Graphs and charts (based on 1-5 scale ratings)
+- Delete user account within 30 days
+- Your Music page information (ratings of stations, number of times listened
+  to a radio station based on how many times clicked "on commercial)
+
+MINOR
+- Getting sign-in going
+- Move About to end of Navigation bar
+- Linking HTML so we don't recode navigation bar over and over?
+- Mobile styling
+- Update README with new Pick 5
+- Round ALL THE EDGES!
