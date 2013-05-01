@@ -14,7 +14,7 @@ for key in urls:
 
 	stations = soup.findAll('p', attrs = {'class':'stnTitle'})
 
-	locStations = []
+	locStations = {}
 	for itr in range(0,len(stations)-1):
 		if itr >= 5:
 			break
@@ -38,7 +38,7 @@ for key in urls:
 		thisStation['title'] = title
 		thisStation['link'] = link
 		print(thisStation)
-		locStations.append(thisStation)
+		locStations[itr] = thisStation
 	results[key] = locStations
 with open('radio_stations.json', 'w') as outfile:
 	json.dump(results, outfile)

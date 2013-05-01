@@ -41,11 +41,19 @@ app.get('/login.json', function(request, response) {
  */
 app.get('/doesExist', function(request, response) {
     userName = request.query.UN;
+    if(!userName) {
+        response.send('error');
+        return;
+    }
     db.users.find({'user':userName}, function(err, cursor){
         if(err) {
             console.log('error' + err);
-            reponse.send('error');
+            response.send('error');
+            return;
         }
+	console.log(cursor);
+    console.log('cursor length is: ' + cursor.length);
+	console.log(err);
         if (cursor.length > 0 ) {
             response.send('true');   
         } else {
@@ -61,19 +69,40 @@ app.get('/doesExist', function(request, response) {
  *
  * MUST CHECK /doesExist BEFORE CALLING THIS. VERY IMPORTANT.
  */
-app.post('/makeUser', function(request, response) {
-    userName = request.query.UN;
-    passWord = request.query.UN;
-    email = request.query.EM; 
 
-    db.users.save({'user':userName, 'password':passWord, 'email':email},
+//TODO turn this bck in to a POST
+app.get('/makeUser', function(request, response) {
+    console.log(request.query);
+    console.log('---------------------');
+    //console.log(request);
+    console.log('---------------------');
+    userName = request.query.UN;
+    passWord = request.query.PW;
+    email = request.query.EM; 
+    console.log(userName);
+    console.log(passWord);
+    console.log(email);
+    db.users.save({'user':userName, 'password':passWord, 'email':email});
+    response.send('success');
+/*
         function(err) {
-            if (err) response.send('false');
-            else response.send('true');    
+            if (err) {
+                console.log('fuck damnit');
+                response.send('false');
+            }
+            else { 
+                console.log('yay!');
+                response.send('true');    
+                
+            }
     });    
-    
+*/    
 });
 
+
+app.get('/*', function(request, response) {
+	response.send(404);
+});
 
 var port = process.env.PORT || 7000;
 app.listen(port, function() {
