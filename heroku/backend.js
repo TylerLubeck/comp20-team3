@@ -41,11 +41,16 @@ app.get('/login.json', function(request, response) {
  */
 app.get('/doesExist', function(request, response) {
     userName = request.query.UN;
+    if(!userName) {
+        response.send('error');
+    }
     db.users.find({'user':userName}, function(err, cursor){
         if(err) {
             console.log('error' + err);
-            reponse.send('error');
+            response.send('error');
         }
+	console.log(cursor);
+	console.log(err);
         if (cursor.length > 0 ) {
             response.send('true');   
         } else {
@@ -61,6 +66,7 @@ app.get('/doesExist', function(request, response) {
  *
  * MUST CHECK /doesExist BEFORE CALLING THIS. VERY IMPORTANT.
  */
+
 app.post('/makeUser', function(request, response) {
     userName = request.query.UN;
     passWord = request.query.UN;
@@ -74,6 +80,10 @@ app.post('/makeUser', function(request, response) {
     
 });
 
+
+app.get('/*', function(request, response) {
+	response.send(404);
+});
 
 var port = process.env.PORT || 7000;
 app.listen(port, function() {
