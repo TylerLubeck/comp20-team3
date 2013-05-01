@@ -1,3 +1,9 @@
+#logo
+{
+    height: 150px;
+    width: 320px;
+}
+
 #login{
 	float: right;
 }
@@ -10,4 +16,11 @@
 }
 input#search_bar{
 	    float: right;
+}
+
+.header
+{
+    margin-bottom: 0px;
+    padding: 10px;
+    padding-bottom: 0px;
 }
