@@ -31,9 +31,24 @@ function create(){
     .done(function(data) {
       alert('done?');  
     })
+<<<<<<< HEAD
+=======
+    .error(function(jqXHR, textStatus, errorThrown) {
+        console.log('FUUUUUUUUUUCK');
+        console.log(jqXHR);
+        console.log(textStatus);
+        console.log(errorThrown);
+        if (textStatus == 'timeout')
+            console.log('No Response');
+
+        if (textStatus == 'error')
+            console.log(errorThrown);
+    })
+>>>>>>> master
     .fail(function(data) {
         alert('error');
     });
+    
 //    jqxhr.done(function() {alert('done');});
 //    .fail(function() {alert('failure');)
 //    .always(function() {alert('always'))};
