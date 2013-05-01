@@ -31,8 +31,6 @@ function create(){
     .done(function(data) {
       alert('done?');  
     })
-<<<<<<< HEAD
-=======
     .error(function(jqXHR, textStatus, errorThrown) {
         console.log('FUUUUUUUUUUCK');
         console.log(jqXHR);
@@ -44,7 +42,6 @@ function create(){
         if (textStatus == 'error')
             console.log(errorThrown);
     })
->>>>>>> master
     .fail(function(data) {
         alert('error');
     });
