@@ -72,11 +72,12 @@ table
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
-    float: right;
+    margin-right: 10px;
     height: 300px;
-    width: 500px;
+    width: 400px;
     background-color: #E0E0E0;
     border-radius: 15px;
+    float: right;
 }
 
 .bio_name
@@ -91,11 +92,27 @@ table
     height: 300px;
     width: 300px;
     text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
-    float: left;
     padding-left: 40px;
     padding-right: 10px;
     padding-bottom: 10px;
     padding-top: 10px;
+}
+
+.bio_div
+{
+    height: 400px;
+    width: 850px;
+}
+
+.bio_head
+{
+    height: 70px;
+    width: 800px;
+    background-color: #E0E0E0;
+    border-radius: 15px;
+    padding-top: 10px;
+    margin-left: 40px;
+
 }
 
 #login
