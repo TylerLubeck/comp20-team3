@@ -34,8 +34,9 @@ function login() {
         console.log('got!');
         if (data != 'false') {
             console.log(data);
+            console.log('data.name: ' + data.name);
             localStorage.userName = data.name;
-            console.log(localStorage.userName);
+            console.log('localStorage.userName: ' + localStorage.userName);
             window.location.href = 'your_music.html';
         } else {
             $('#login_failed').show(); 
