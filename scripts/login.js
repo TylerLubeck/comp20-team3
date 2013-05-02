@@ -16,8 +16,6 @@ function create(){
             $.post(serverName, {'UN':UN, 'PW':PW, 'EM':EM, 'realName':NAME}, 
                     function(data) {
                         localStorage.userName = NAME;
-                        alert(NAME);
-                        alert(localStorage.userName);
                         window.location.href = "your_music.html";
             });
         }
@@ -33,9 +31,11 @@ function login() {
     $.get(serverName, {'UN':UN, 'PW':PW}, function(data) {
         console.log('got!');
         if (data != 'false') {
-            console.log(data);
-            localStorage.userName = data.name;
-            console.log(localStorage.userName);
+            dataJSON = JSON.parse(data);
+            console.log(dataJSON);
+            console.log('data.name: ' + dataJSON.name);
+            localStorage.userName = dataJSON.name;
+            console.log('localStorage.userName: ' + localStorage.userName);
             window.location.href = 'your_music.html';
         } else {
             $('#login_failed').show(); 
