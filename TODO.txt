@@ -8,9 +8,6 @@ MAJOR
 
 MINOR
 - Getting sign-in going
-- Move About to end of Navigation bar
 - Linking HTML so we don't recode navigation bar over and over?
 - Mobile styling
 - Update README with new Pick 5
-- Round ALL THE EDGES!
-- Nix the home button and make logo hotlink to home page instead
