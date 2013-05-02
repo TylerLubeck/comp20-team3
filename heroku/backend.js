@@ -30,6 +30,7 @@ app.get('/login.json', function(request, response) {
     userName = request.body.UN;
     password = request.body.PW;
     cursor = db.users.find({'user':userName});
+    console.log(cursor);
     if(cursor && cursor.password == password) {
         response.send({'name':cursor.realName}); 
     } else {
