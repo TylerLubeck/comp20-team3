@@ -6,7 +6,7 @@ if(typeof(Storage)!=="undefined")
     }
     else
     {
-        document.write('<li><a href="sign_in.html">Sign In</a></li>');	 	
+        document.write('<li><a href="sign_in.html">Sign In/Register</a></li>');	 	
     }
 }
 else
