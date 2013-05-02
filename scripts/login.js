@@ -27,6 +27,8 @@ function create(){
 function login() {
     var UN = document.getElementById('UN-login').value;
     var PW = document.getElementById('PW-login').value;
+    console.log('sending password: ' + PW);
+    console.log('sending username: ' + UN);
     serverName = server + '/login.json';
     $.get(serverName, {'UN':UN, 'PW':PW}, function(data) {
         console.log('got!');
