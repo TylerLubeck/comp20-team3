@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Log In Page</title>	
 	<link type="text/css" rel="stylesheet" href="bootstrap_files/css/bootstrap.css"/>
@@ -7,39 +8,41 @@
 	<link rel="stylesheet" media="only screen and (min-device-width: 961px)" href="stylesheets/sign_in.css"/>
     <script src='../scripts/jquery-1.9.1.min.js'></script>
 </head>
+
 <body>
 	<form class="well from-search header" align="left">
 		<a href="index.html"><img id="logo" src="images/logo.png" alt="Road Trip Radio"></a>
 		<input id="search_bar" type="text" class="span3 search-query" placeholder="Search...">
 		
-	<ul class="nav nav-pills" id="login">
-		<script src="../scripts/signed_in.js"></script>
-		<li><a onclick="logout()" href="sign_in.html">Sign Out</a></li>
+		<ul class="nav nav-pills" id="login">
+			<script src="../scripts/signed_in.js"></script>
+			<li><a onclick="logout()" href="sign_in.html">Sign Out</a></li>
 
-	</ul>
-	<div class="navbar">
-	  	<div class="navbar-inner">
-	    	<ul class="nav">
-	    		<li class="brand"></li>
-	      		<li><a href="index.html">Home</a></li>
-	      		<li><a href="your_music.html">Your Music</a></li>
-	      		<li><a href="theirmusic.html">Statistics</a></li>
-	      		<li><a href="about.html">About</a></li>
-	    	</ul>
-	  	</div>
-	</div>
+		</ul>
+		<div class="navbar">
+		  	<div class="navbar-inner">
+		    	<ul class="nav">
+		    		<li class="brand"></li>
+		      		<li><a href="index.html">Home</a></li>
+		      		<li><a href="your_music.html">Your Music</a></li>
+		      		<li><a href="theirmusic.html">Statistics</a></li>
+		      		<li><a href="about.html">About</a></li>
+		    	</ul>
+		  	</div>
+		</div>
 	</form>
+
 	<div id="create_format">
-		<div id="header_format"><h1>Create Account or Log In</h1></div>
+		<div class="gradient" id="header_format"><h1>Create Account or Log In</h1></div>
 		
-		<form id="log_in" class="span4">
+		<form class="gradient" id="log_in" class="span4">
 		    	<h1>Login</h1><br/>
 		    	<input id="UN-login" type="text" class="span3" placeholder="Username"><br/>
 		    	<input id="PW-login" type="password" class="span3" placeholder="Password"><br/>
 	    	    <p id="login_failed">Your login went wrong, please try again</p>
 		    	<button type="button" id= "loginButton" class="btn btn-pimary">Login</button><br/>
 		</form>   
-		<form id="create_account" class="span4">
+		<form class="gradient" id="create_account" class="span4">
 	    	<h1>Create Account</h1><br/>
 	    	<input id="UN-create" type="text" class="span3" placeholder="Username"><br/>
 	    	<p id="user_taken">That name is unavailable.</p>
@@ -49,6 +52,7 @@
 	    	<button type="button" id="createAccount" class="btn btn-pimary">Submit</button><br/>
 	    </form>
 	</div>
+
 	<script src="bootstrap_files/js/bootstrap.js"></script>
         <script src='../scripts/login.js'></script>
 </body>
