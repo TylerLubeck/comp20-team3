@@ -31,6 +31,7 @@ function login() {
     $.get(serverName, {'UN':UN, 'PW':PW}, function(data) {
         console.log('got!');
         if (data != 'false') {
+            data = JSON.parse(data);
             console.log(data);
             console.log('data.name: ' + data['name']);
             localStorage.userName = data.name;
