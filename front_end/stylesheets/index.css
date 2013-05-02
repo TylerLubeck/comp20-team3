@@ -115,6 +115,20 @@ table
 
 }
 
+.gradient 
+{
+    background-color: #F0F0F0;
+    background: -webkit-linear-gradient(#D0D0D0, #F0F0F0);
+    background: -moz-linear-gradient(#D0D0D0, #F0F0F0);
+    background: -ms-linear-gradient(#D0D0D0, #F0F0F0);
+    background: -o-linear-gradient(#D0D0D0, #F0F0F0);
+    background: linear-gradient(#D0D0D0, #F0F0F0);
+
+    box-shadow: inset #D0D0D0 0 1px 0,
+                inset #F0F0F0 0 -1px 0,
+                rgba(0,0,0,0.25) 0 1px 5px;
+}
+
 #login
 {
     float: right;
@@ -133,7 +147,6 @@ table
 
 #musicinfo
 {
-    background-color: #E0E0E0;
     width: 60%;
     margin-right: 2%;
     height: 400px;
@@ -141,11 +154,22 @@ table
     float: right;
     padding: 10px;
     border-radius: 15px;
+
+    background-color: #F0F0F0;
+    background: -webkit-linear-gradient(#D0D0D0, #F0F0F0);
+    background: -moz-linear-gradient(#D0D0D0, #F0F0F0);
+    background: -ms-linear-gradient(#D0D0D0, #F0F0F0);
+    background: -o-linear-gradient(#D0D0D0, #F0F0F0);
+    background: linear-gradient(#D0D0D0, #F0F0F0);
+
+    box-shadow: inset #D0D0D0 0 1px 0,
+                inset #F0F0F0 0 -1px 0,
+                rgba(0,0,0,0.25) 0 1px 5px;
 }
 
 #accountmng
 {
-    background-color: #E0E0E0;
+    background-color: #F0F0F0;
     width: 30%;
     margin-left: 2%;
     height: 400px;
@@ -153,6 +177,17 @@ table
     float: left;
     padding: 10px;
     border-radius: 15px;
+
+    background-color: #F0F0F0;
+    background: -webkit-linear-gradient(#F0F0F0, #D0D0D0);
+    background: -moz-linear-gradient(#F0F0F0, #D0D0D0);
+    background: -ms-linear-gradient(#F0F0F0, #D0D0D0);
+    background: -o-linear-gradient(#F0F0F0 , #D0D0D0);
+    background: linear-gradient(#F0F0F0, #D0D0D0);
+
+    box-shadow: inset #F0F0F0 0 1px 0,
+                inset #D0D0D0 0 -1px 0,
+                rgba(0,0,0,0.25) 0 1px 5px;
 }
 
 #map_canvas
