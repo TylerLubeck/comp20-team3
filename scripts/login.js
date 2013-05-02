@@ -1,6 +1,5 @@
 var server = 'http://afternoon-anchorage-3983.herokuapp.com';
 //var server = 'localhost:5000';
-alert('Alerting for safety');
 function create(){
     var UN = document.getElementById('UN-create').value;
     var PW = document.getElementById('PW-create').value;
@@ -16,7 +15,8 @@ function create(){
             serverName = server + '/makeUser';
             $.post(serverName, {'UN':UN, 'PW':PW, 'EM':EM, 'realName':NAME}, 
                     function(data) {
-                        alert('REDIRECT NOW');
+                        localStorage.userName = NAME;
+                        window.location.href = "your_music.html";
             });
         }
     });
