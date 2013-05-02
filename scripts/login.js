@@ -32,7 +32,7 @@ function login() {
     serverName = server + '/login.json';
     $.get(serverName, {'UN':UN, 'PW':PW}, function(data) {
         if (data != 'false') {
-            dataJSON = JSON.parse(data);
+            dataJSON = $.parseJSON(data);
             localStorage.userName = dataJSON.name;
             window.location.href = 'your_music.html';
         } else {
