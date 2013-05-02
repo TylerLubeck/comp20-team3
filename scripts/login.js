@@ -25,17 +25,15 @@ function create(){
 function login() {
     var UN = document.getElementById('UN-login').value;
     var PW = document.getElementById('PW-login').value;
-    console.log('sending password: ' + PW);
-    console.log('sending username: ' + UN);
+    if (UN == undefined || PW == undefined) {
+        $('#login_failed').show();
+        return;
+    }
     serverName = server + '/login.json';
     $.get(serverName, {'UN':UN, 'PW':PW}, function(data) {
-        console.log('got!');
         if (data != 'false') {
             dataJSON = JSON.parse(data);
-            console.log(dataJSON);
-            console.log('data.name: ' + dataJSON.name);
             localStorage.userName = dataJSON.name;
-            console.log('localStorage.userName: ' + localStorage.userName);
             window.location.href = 'your_music.html';
         } else {
             $('#login_failed').show(); 
