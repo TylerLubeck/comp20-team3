@@ -8,6 +8,8 @@ var collections = ['users'];
 var db = require('mongojs').connect(dbURL, collections);
    
 var app = express();
+
+/* Allow cross-domain access */
 app.use(express.bodyParser());
 /* Allow cross-domain access */
 app.all('*', function(req, res, next) {
@@ -28,9 +30,8 @@ app.get('/login.json', function(request, response) {
     userName = request.body.UN;
     password = request.body.PW;
     cursor = db.users.find({'user':userName});
+    console.log(cursor);
     if(cursor && cursor.password == password) {
-        console.log('CURSOR: ' + cursor);
-        console.log('REALNAME IS: ' + cursor.realName);
         response.send({'name':cursor.realName}); 
     } else {
         response.send('false');

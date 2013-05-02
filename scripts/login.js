@@ -15,7 +15,10 @@ function create(){
             serverName = server + '/makeUser';
             $.post(serverName, {'UN':UN, 'PW':PW, 'EM':EM, 'realName':NAME}, 
                     function(data) {
-                        alert('REDIRECT NOW');
+                        localStorage.userName = NAME;
+                        alert(NAME);
+                        alert(localStorage.userName);
+                        window.location.href = "your_music.html";
             });
         }
     });
