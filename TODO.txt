@@ -13,3 +13,4 @@ MINOR
 - Mobile styling
 - Update README with new Pick 5
 - Round ALL THE EDGES!
+- Nix the home button and make logo hotlink to home page instead
