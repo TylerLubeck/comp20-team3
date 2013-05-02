@@ -31,10 +31,10 @@ function login() {
     $.get(serverName, {'UN':UN, 'PW':PW}, function(data) {
         console.log('got!');
         if (data != 'false') {
-            data = JSON.parse(data);
-            console.log(data);
-            console.log('data.name: ' + data['name']);
-            localStorage.userName = data.name;
+            dataJSON = JSON.parse(data);
+            console.log(dataJSON);
+            console.log('data.name: ' + dataJSON.name);
+            localStorage.userName = dataJSON.name;
             console.log('localStorage.userName: ' + localStorage.userName);
             window.location.href = 'your_music.html';
         } else {
