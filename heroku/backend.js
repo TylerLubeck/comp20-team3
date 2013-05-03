@@ -161,7 +161,7 @@ app.get('/usersearch.json', function(request, response) {
     var listenedto = [];
     db.stationRatings.find({user:username}).limit(20, function(err, scores) {
         if (err || !scores.length) {
-            console.log("Game not found");
+            listenedto = [];
         } else {
             scores.forEach(function(score) {
                 listenedto.push(score);

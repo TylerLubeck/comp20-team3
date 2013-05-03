@@ -33,13 +33,9 @@ these songs and will be presented with links to buy it on amazon music
 ###Features (Pick 5)
 
 * Geolocation
-
-* Front-end Framework (Bootstrap?)
-
+* Front-end Framework (Bootstrap)
 * Report with times/graphs (Google graphs api)
-
-* Custom Search
-
+* Data/screen scraping
 * Emails/SMS
 
 ###Data Collected & Used###
@@ -52,26 +48,20 @@ Popular music data by location (Echonest)
 preferences. (e.g. genre, local bands only, etc.)
 
 ###APIs###
-* Google Maps (As required)
-* Echonest
-* Google Graphs
-* Potentially Youtube
-* Facebook
+
+* Google Maps API
+* Google Graphs API
 
 ###A Note on Music Providers###
 
 Two options:
 
-
 * I believe echonest provides 30 second song clips. We can safely use these.
-
 * We can use youtube videos. Put the video in a div and hide the div, and I
   believe it will still play. This is very bad for mobile services as it
   means more data usage and more bandwidth, but we will be able to get whole
   songs.
-
-Either way, should this product go live, we should find a way to rent music.
-
+* Either way, should this product go live, we should find a way to rent music.
 
 ###Mock-Ups###
 ![Computer Generated Mock-Ups][mockup]
