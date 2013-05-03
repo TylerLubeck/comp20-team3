@@ -5,7 +5,7 @@ html
 
 body
 {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", 
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", 
                      "Helvetica Neue", sans-serif;
     height: 70%;
     margin : 0px;
@@ -14,20 +14,29 @@ body
 
 P
 {
+    padding-left: 50px;
+    padding-right: 50px;
     font-size: 14px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-weight: 100;
+    line-height: 1em;
 }
 
 h1
 {
-	font-weight: 100;
+    font-weight: 100;
     text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
-table
+h3
 {
-	background-color: #FFFFFF;
+    font-weight: 100;
+    text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
 }
+
+a:link {color: #fd7c00;}
+a:visited {color: #7f1862;}
+a:hover{text-decoration: underline;}
 
 .header
 {
@@ -56,6 +65,68 @@ table
     text-align: center;
 }
 
+.bio
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin-right: 10px;
+    height: 300px;
+    width: 400px;
+    background-color: #E0E0E0;
+    border-radius: 15px;
+    float: right;
+}
+
+.bio_name
+{
+    font-weight: 100;
+    text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
+    padding-left: 30px;
+}
+
+.bio_image
+{
+    height: 300px;
+    width: 300px;
+    text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
+    padding-left: 40px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.bio_div
+{
+    height: 400px;
+    width: 850px;
+}
+
+.bio_head
+{
+    height: 70px;
+    width: 800px;
+    background-color: #E0E0E0;
+    border-radius: 15px;
+    padding-top: 10px;
+    margin-left: 40px;
+
+}
+
+.gradient 
+{
+    background-color: #F0F0F0;
+    background: -webkit-linear-gradient(#D0D0D0, #F0F0F0);
+    background: -moz-linear-gradient(#D0D0D0, #F0F0F0);
+    background: -ms-linear-gradient(#D0D0D0, #F0F0F0);
+    background: -o-linear-gradient(#D0D0D0, #F0F0F0);
+    background: linear-gradient(#D0D0D0, #F0F0F0);
+
+    box-shadow: inset #D0D0D0 0 1px 0,
+                inset #F0F0F0 0 -1px 0,
+                rgba(0,0,0,0.25) 0 1px 5px;
+}
+
 #login
 {
     float: right;
@@ -74,28 +145,47 @@ table
 
 #musicinfo
 {
-    outline-color: black;
-    outline-width: thin;
-    outline-style: solid;
-    background-color: #CCCC99;
-    width: 45%;
+    width: 60%;
     margin-right: 2%;
     height: 400px;
     text-align: center;
     float: right;
+    padding: 10px;
+    border-radius: 15px;
+
+    background-color: #F0F0F0;
+    background: -webkit-linear-gradient(#D0D0D0, #F0F0F0);
+    background: -moz-linear-gradient(#D0D0D0, #F0F0F0);
+    background: -ms-linear-gradient(#D0D0D0, #F0F0F0);
+    background: -o-linear-gradient(#D0D0D0, #F0F0F0);
+    background: linear-gradient(#D0D0D0, #F0F0F0);
+
+    box-shadow: inset #D0D0D0 0 1px 0,
+                inset #F0F0F0 0 -1px 0,
+                rgba(0,0,0,0.25) 0 1px 5px;
 }
 
 #accountmng
 {
-	outline-color: black;
-    outline-width: thin;
-    outline-style: solid;
-    background-color: #CCCC99;
-    width: 45%;
+    background-color: #F0F0F0;
+    width: 30%;
     margin-left: 2%;
     height: 400px;
     text-align: center;
     float: left;
+    padding: 10px;
+    border-radius: 15px;
+
+    background-color: #F0F0F0;
+    background: -webkit-linear-gradient(#F0F0F0, #D0D0D0);
+    background: -moz-linear-gradient(#F0F0F0, #D0D0D0);
+    background: -ms-linear-gradient(#F0F0F0, #D0D0D0);
+    background: -o-linear-gradient(#F0F0F0 , #D0D0D0);
+    background: linear-gradient(#F0F0F0, #D0D0D0);
+
+    box-shadow: inset #F0F0F0 0 1px 0,
+                inset #D0D0D0 0 -1px 0,
+                rgba(0,0,0,0.25) 0 1px 5px;
 }
 
 #map_canvas
@@ -121,5 +211,47 @@ table
                      "Helvetica Neue", sans-serif;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         font-weight: 100;
-        width: 1000px;
+        width: 450px;
+}
+
+#box-table-a
+{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    margin: 45px;
+    width: 480px;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+#box-table-a th
+{
+    font-size: 13px;
+    font-weight: normal;
+    padding: 8px;
+    background: #b9c9fe;
+    border-top: 4px solid #aabcfe;
+    border-bottom: 1px solid #fff;
+    color: #039;
+}
+
+#box-table-a td
+{
+    padding: 8px;
+    background: #e8edff; 
+    border-bottom: 1px solid #fff;
+    color: #669;
+    border-top: 1px solid transparent;
+}
+
+#box-table-a tr:hover td
+{
+    background: #d0dafd;
+    color: #339;
+}
+
+#cellular_window
+{
+    height: 100%;
+    width: 100%;
 }
