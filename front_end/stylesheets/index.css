@@ -249,3 +249,9 @@ a:hover{text-decoration: underline;}
     background: #d0dafd;
     color: #339;
 }
+
+#cellular_window
+{
+    visibility: hidden;
+    display: none;
+}
