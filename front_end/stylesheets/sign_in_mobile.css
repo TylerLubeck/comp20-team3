@@ -2,6 +2,21 @@
 	float: right;
 }
 
+body{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", 
+                     "Helvetica Neue", sans-serif;
+    height: 70%;
+    margin : 0px;
+    padding: 0px;
+}
+
+h1
+{
+    font-weight: 100;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 30px;
+}
+
 #logo
 {
     height: 150px;
@@ -15,11 +30,21 @@
     padding-bottom: 0px;
 }
 
+.gradient
+{
+    background-color: #F0F0F0;
+    background: -webkit-linear-gradient(#D0D0D0, #F0F0F0);
+    background: -moz-linear-gradient(#D0D0D0, #F0F0F0);
+    background: -ms-linear-gradient(#D0D0D0, #F0F0F0);
+    background: -o-linear-gradient(#D0D0D0, #F0F0F0);
+    background: linear-gradient(#D0D0D0, #F0F0F0);
+
+    box-shadow: inset #D0D0D0 0 1px 0,
+                inset #F0F0F0 0 -1px 0,
+                rgba(0,0,0,0.25) 0 1px 5px;
+}
+
 form#log_in{
-    outline-color: black;
-    outline-width: thin;
-    outline-style: solid;
-    background-color: #CCCC99;
     width: 95%;
     margin-left: 2%;
     height: 400px;
@@ -27,12 +52,9 @@ form#log_in{
 }
 
 form#create_account{
-    outline-color: black;
-    outline-width: thin;
-    outline-style: solid;
     background-color: #CCCC99;
     width: 95%;
-    margin-left: 2%
+    margin-left: 2%;
     height: 400px;
     text-align: center;
 
@@ -43,19 +65,12 @@ input#search_bar{
 }
 
 div#create_format{
-    outline-color: black;
-    outline-width: thin;
-    outline-style: solid;
-    background-color: #FFFFFF;
     margin-left: 1%;
     margin-right: 1%;
     height: 750px;
 }
 
 div#header_format{
-    outline-color: black;
-    outline-width: thin;
-    outline-style: solid;
     background-color: #CCCC99;
     text-align: center;
 }
