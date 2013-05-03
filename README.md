@@ -40,7 +40,7 @@ these songs and will be presented with links to buy it on amazon music
 
 ###Data Collected & Used###
 
-Popular music data by location (Echonest)
+Popular radio stations from I Heart Radio
 
 ###Algorithms or Special Techniques###
 
@@ -51,6 +51,7 @@ preferences. (e.g. genre, local bands only, etc.)
 
 * Google Maps API
 * Google Graphs API
+* Sendgrid for E-mail
 
 ###A Note on Music Providers###
 
