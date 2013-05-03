@@ -33,7 +33,7 @@ app.get('/station_info', function(request, response){
 			response.send('error');
 		}
 		console.log(cursor);
-		response.send(cursor);
+		response.send('you got here');
 	});
 	
 });
