@@ -116,9 +116,9 @@ app.get('/doesExist', function(request, response) {
  */
 
 app.post('/makeUser', function(request, response) {
-    userName = sanitize(request.body.UN).escape();
-    passWord = sanitize(request.body.PW).escape();
-    realName = sanitize(request.body.realName).escape();
+    userName = sanitize(request.body.UN).xss();
+    passWord = sanitize(request.body.PW).xss();
+    realName = sanitize(request.body.realName).xss();
     email = request.body.EM; 
     console.log(request.body);
     db.users.save({'user':userName, 'password':passWord, 'email':email,
