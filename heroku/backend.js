@@ -1,5 +1,6 @@
 /* Set up Code... */
 var express = require('express');
+var sanitize = require('validator').sanitize;
 var SendGrid = require('sendgrid').SendGrid;
 var sendgrid = new SendGrid(
         process.env.SENDGRID_USERNAME,
@@ -40,14 +41,17 @@ app.get('/station_info', function(request, response){
 	
 });
 
+
+
 app.post('/station_rating', function(request, response){
-	station = request.body.station;
-	rating = request.body.rating;
-    user = request.body.user;
+	station = sanitize(request.body.station).escape();
+	rating = sanitize(request.body.rating).escape();
+    user = sanitize(request.body.user).escape();
     //console.log('REQUEST IS: ' + request.body);
     console.log('USER IS: ' + user);
 	db.stationRatings.save({'station':station, 'rating':rating, 'user':user});
-	response.send('success');
+//	response.send('success');
+response.send("<script> window.location.href = 'http:/roadtriprocking.com/front_end/index.html';</script>");
 });
 
    
@@ -112,9 +116,9 @@ app.get('/doesExist', function(request, response) {
  */
 
 app.post('/makeUser', function(request, response) {
-    userName = request.body.UN;
-    passWord = request.body.PW;
-    realName = request.body.realName;
+    userName = sanitize(request.body.UN).escape();
+    passWord = sanitize(request.body.PW).escape();
+    realName = sanitize(request.body.realName).escape();
     email = request.body.EM; 
     console.log(request.body);
     db.users.save({'user':userName, 'password':passWord, 'email':email,
@@ -130,8 +134,8 @@ app.post('/makeUser', function(request, response) {
 });
 
 app.post('/rankStation', function(request, response) {
-    station = request.body.station;
-    ranking = parseInt(request.body.rank);
+    station = sanitize(request.body.station).escape();
+    ranking = sanitize(parseInt(request.body.rank)).escape();
     db.radioInfo.find({'station': station}, function(err, cursor) {
         if ( cursor == undefined) {
             db.radioInfo.save({'station': station, 'rankFull': ranking, 'numRankings':1, 'average':1});
