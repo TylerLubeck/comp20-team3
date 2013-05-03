@@ -5,6 +5,8 @@
 	<link type="text/css" rel="stylesheet" href="bootstrap_files/css/bootstrap.css"/>
 	<link type="text/css" rel="stylesheet" href="stylesheets/index.css"/>
 	<script type="text/javascript" src = "bootstrap_files/js/yourmusic.js"></script>
+	<script src="jquery-1.9.1.min.js"></script>
+
 
 </head>
 <body onload="initialize()">
@@ -37,7 +39,36 @@
 	
 	<div class="gradient" id="musicinfo">
 		<h3>Your Music</h3>
-		<div id="your_music"></div>
+		<script>
+			var your_music = [];
+	$.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station0 +
+			"&username=" + localStorage.userName, function(data) {
+				console.log(data);
+				your_music += data[0];
+			});
+	$.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station1 +
+			"&username=" + localStorage.userName, function(data) {
+				console.log(data);
+				your_music += data[0];
+			});
+	$.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station2 +
+			"&username=" + localStorage.userName, function(data) {
+				console.log(data);
+				your_music += data[0];
+			});
+	$.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station3 +
+			"&username=" + localStorage.userName, function(data) {
+				console.log(data);
+				your_music += data[0];
+			});
+	$.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station4 +
+			"&username=" + localStorage.userName, function(data) {
+				console.log(data);
+				your_music += data[0];
+			});
+			
+		console.log(your_music);
+		</script>
 	</div>
 	    
 	<script src="js/bootstrap.js"></script>
