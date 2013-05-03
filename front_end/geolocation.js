@@ -54,9 +54,8 @@ function generateMap()
 
 function top5()
 {
-    $.getJSON("radio_stations_with_latlon.json", function(json) {
-        console.log(json);
-    });
+    stations = JSON.parse(location_json_string);
+    console.log(stations);
 }
 
 function showPosition(position)
