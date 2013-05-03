@@ -6,4 +6,3 @@ MAJOR
 
 MINOR
 - Mobile styling
-- Update README with new Pick 5
