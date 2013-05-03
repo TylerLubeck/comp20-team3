@@ -37,7 +37,7 @@ if [ "$1" =  "-commit" ];then
 
 	cd $HEROKU_APP
 
-
+    git pull
 	git add *
 	git commit -m "$COMMITMESSAGE"
 	git push origin master

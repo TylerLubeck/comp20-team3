@@ -1,21 +1,20 @@
 if(typeof(Storage)!=="undefined")
-  {
-  if (localStorage.username)
+{
+    if (localStorage.userName)
     {
-	    document.write('<li><a href="your_music.html">'+localStorage.username+'</a></li>');
+        document.write('<li><a href="your_music.html">'+localStorage.userName+'</a></li>');
     }
-  else
+    else
     {
-    	localStorage.username="Joe";
-	 	document.write('<li><a href="sign_in.html">Sign In</a></li>');	 	
+        document.write('<li><a href="sign_in.html">Sign In/Register</a></li>');	 	
     }
-  }
+}
 else
-  {
-		document.write("LOL");	  
-  }
-  
+{
+    document.write("LOL");	  
+}
+
 function logout(){
-	localStorage.clear();
-	window.location.href="sign_in.html";
+    localStorage.clear();
+    window.location.href="sign_in.html";
 }

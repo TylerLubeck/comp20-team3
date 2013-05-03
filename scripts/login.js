@@ -15,7 +15,8 @@ function create(){
             serverName = server + '/makeUser';
             $.post(serverName, {'UN':UN, 'PW':PW, 'EM':EM, 'realName':NAME}, 
                     function(data) {
-                        alert('REDIRECT NOW');
+                        localStorage.userName = NAME;
+                        window.location.href = "your_music.html";
             });
         }
     });
@@ -24,13 +25,15 @@ function create(){
 function login() {
     var UN = document.getElementById('UN-login').value;
     var PW = document.getElementById('PW-login').value;
+    if (UN == undefined || PW == undefined) {
+        $('#login_failed').show();
+        return;
+    }
     serverName = server + '/login.json';
     $.get(serverName, {'UN':UN, 'PW':PW}, function(data) {
-        console.log('got!');
         if (data != 'false') {
-            console.log(data);
-            localStorage.userName = data.name;
-            console.log(localStorage.userName);
+            dataJSON = $.parseJSON(data);
+            localStorage.userName = dataJSON.name;
             window.location.href = 'your_music.html';
         } else {
             $('#login_failed').show(); 
