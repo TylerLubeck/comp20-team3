@@ -42,7 +42,6 @@
 			var your_music = new Array();;
 	$.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station0 +
 			"&username=" + localStorage.userName, function(data) {
-				console.log(data[0]);
 				your_music[0] = data[0];
 
 			});
@@ -62,7 +61,7 @@
 			"&username=" + localStorage.userName, function(data) {
 				your_music[4] = data[0];
 			});
-			console.log(your_music);
+			console.log(your_music[0]);
 		</script>
 	</div>
 	    
