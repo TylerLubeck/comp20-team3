@@ -40,10 +40,9 @@
 		<h3>Your Music</h3>
 		<script>
 			var your_music = new Array();
-			your_music[0] = "hi";
 	$.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station0 +
 			"&username=" + localStorage.userName, function(data) {
-				your_music[0] = data[0];
+				document.write(data);
 
 			});
 	$.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station1 +
