@@ -26,6 +26,8 @@ app.all('*', function(req, res, next) {
     next();
 });
 
+
+
 app.get('/station_info', function(request, response){
 	station = request.query.station;
 	console.log(station);
@@ -39,12 +41,12 @@ app.get('/station_info', function(request, response){
 	
 });
 
-app.post('/station_rating', function(request, response)){
-	station = request.body.station;
-	rating = request.body.rating;
-	db.stationRatings.save({'station':station, 'rating':rating, 'user':localStorage.username});
-	response.send('success');
-}
+//app.post('/station_rating', function(request, response)){
+//	station = request.body.station;
+//	rating = request.body.rating;
+//	db.stationRatings.save({'station':station, 'rating':rating, 'user':localStorage.username});
+//	response.send('success');
+//}
 
    
 /* use site.com/login.json?UN=XXXXX&PW=XXXXX
