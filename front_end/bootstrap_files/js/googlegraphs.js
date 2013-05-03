@@ -56,8 +56,8 @@
         chart.draw(data, options);
       });
      }
-           function drawChart2() {
-          $.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station2, function(data) {
+      function drawChart2() {
+          $.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station1, function(data) {
           	console.log(data);
           	var count = new Array();
           	for(i = 1; i < 6; i++)
@@ -73,15 +73,15 @@
           ['5',  	  count[5]]
         ]);
         var options = {
-          title: localStorage.station2,
+          title: localStorage.station1,
           hAxis: {title: 'Rating', titleTextStyle: {color: 'red'}}
         };
-            console.log("WTF");
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div2'));
         chart.draw(data, options);
       });
      }
-           function drawChart3() {
+
+                function drawChart3() {
           $.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station3, function(data) {
           	console.log(data);
           	var count = new Array();
