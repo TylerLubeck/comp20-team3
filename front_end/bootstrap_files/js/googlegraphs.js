@@ -75,8 +75,8 @@
         var options = {
           title: localStorage.station2,
           hAxis: {title: 'Rating', titleTextStyle: {color: 'red'}}
-          console.log("WTF");
         };
+            console.log("WTF");
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div2'));
         chart.draw(data, options);
       });
