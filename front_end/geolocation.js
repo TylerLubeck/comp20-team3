@@ -53,7 +53,6 @@ function generateMap()
 
 function showPosition(position)
 {
-        console.log("got position")
         latlng = new google.maps.LatLng(position.coords.latitude,
                                         position.coords.longitude);
 
@@ -72,30 +71,53 @@ function showPosition(position)
         marker = new google.maps.Marker(markerOptions);
 
         myContent = "";
-        myContent += "<h3>Radio Stations</h3>"
-        myContent += "<table id='window_table'>"
-        myContent += "<tr><th>Title</th><th>Genre</th><th>Website</th><th>Ranking</th><th>Rank</th>"
+        myContent += "<h3>Top Radio Stations in "
         top5();
+        myContent += closestCity + "</h3>"
+        myContent += "<table id='window_table'>"
+        myContent += "<tr><th>Title</th><th>Genre</th><th>Website</th><th>Ranking</th>"
+
+
+        for(i = 0; i < 5; i++) {
+                getRank(closestStations[i].title, i);
+                //addRankButton(closestStations[i].title, i);     
+        }
+
+        rank_form = "";
+        rank_form += '<form action="http:\/\/afternoon-anchorage-3983.herokuapp.com" method="post">';
+        rank_form += '<select name="stations">';
+
         for(var i = 0; i < 5; i++) {
             myContent += "<tr>";
             myContent += "<td>" + closestStations[i].title + "</td>";
             myContent += "<td>" + closestStations[i].genre + "</td>";
-            myContent += "<td>" + closestStations[i].website + "</td>";
-            myContent += "<td id='tdRank" + i +"'></td>";
-            myContent += "<td></td";
+            myContent += "<td>" + "<a href=http://" + closestStations[i].website + ">" 
+            myContent += closestStations[i].website + "</a></td>";
+            myContent += "<td id='tdRank" + i + "'></td>";
             myContent += "</tr>";
+            rank_form += '<option value="' + closestStations[i].title + '">';
+            rank_form += closestStations[i].title;
+            rank_form += '</option>';
         }
         myContent += "</table>"
+        rank_form += '</select>';
+        
+        myContent += "<h3>Tell us about the station you're listening to! </h3>"
+
+        rank_form += ' 1 <input type="radio" name="ranking" value="1">  ';
+        rank_form += '2 <input type="radio" name="ranking" value="2">  ';
+        rank_form += '3 <input type="radio" name="ranking" value="3">  ';
+        rank_form += '4 <input type="radio" name="ranking" value="4">  ';
+        rank_form += '5 <input type="radio" name="ranking" value="5">  ';
+        rank_form += '<input type="submit" value="Submit">';
+        rank_form += '</form>';
+        myContent += rank_form;
 
         var windowOptions = {
             //maxWidth: 1000,
             content: myContent
         }
 
-        for(i = 0; i < 5; i++) {
-                getRank(closestStations[i].title, i);
-                //addRankButton(closestStations[i].title, i);     
-        }
         wind = new google.maps.InfoWindow(windowOptions);
         wind.open(map, marker);
 }
@@ -103,7 +125,6 @@ function showPosition(position)
 function top5()
 {
     stations = JSON.parse(location_json_string);
-    console.log(stations);
     nearestLoc();
 }
 
@@ -121,8 +142,6 @@ function nearestLoc()
             }
         }
     });
-    console.log(closestCity);
-    console.log(closestStations);
 }
 
 function distance(toLat, toLng)
