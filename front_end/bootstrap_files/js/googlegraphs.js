@@ -5,7 +5,7 @@
        google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart0);
       google.setOnLoadCallback(drawChart1);
-      google.setOnLoadCallback(drawChart10);
+      google.setOnLoadCallback(drawChart2);
       google.setOnLoadCallback(drawChart3);
       google.setOnLoadCallback(drawChart4);
       function drawChart0() {
@@ -56,8 +56,8 @@
         chart.draw(data, options);
       });
      }
-    function drawChart10() {
-          $.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station1, function(data) {
+    function drawChart2() {
+          $.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station2, function(data) {
           	console.log(data);
           	var count = new Array();
           	for(i = 1; i < 6; i++)
@@ -73,10 +73,10 @@
           ['5',  	  count[5]]
         ]);
         var options = {
-          title: localStorage.station1,
+          title: localStorage.station2,
           hAxis: {title: 'Rating', titleTextStyle: {color: 'red'}}
         };
-        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div10'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div10')); //chart_div2 DOESNT WORK I DONT KNOW WHY!
         chart.draw(data, options);
       });
      }
