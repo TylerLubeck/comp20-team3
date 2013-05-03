@@ -166,7 +166,7 @@ app.get('/getRanking', function(request, response) {
 app.get('/usersearch.json', function(request, response) {
     var username = request.query.username;
     var listenedto = [];
-    db.stationRatings.find({user:username}).limit(20, function(err, scores) {
+    db.stationRatings.find({user:username}).limit(5, function(err, scores) {
         if (err || !scores.length) {
             console.log("Game not found");
         } else {
