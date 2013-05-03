@@ -17,6 +17,12 @@ h1
     font-size: 50px;
 }
 
+input
+{
+    width: 500px;
+    height: 100px;
+}
+
 #logo
 {
     height: 150px;
