@@ -101,7 +101,7 @@ function showPosition(position)
             myContent += "<td>" + closestStations[i].genre + "</td>";
             myContent += "<td>" + "<a href=http://" + closestStations[i].website + ">" 
             myContent += closestStations[i].website + "</a></td>";
-            myContent += "<td id='tdRank" + i + "'></td>";
+            myContent += "<td id='tdRank" + i + "'>4</td>";
             myContent += "</tr>";
             rank_form += '<option value="' + closestStations[i].title + '">';
             rank_form += closestStations[i].title;
@@ -121,8 +121,9 @@ function showPosition(position)
         rank_form += '</form>';
         myContent += rank_form;
 
+        $('#cellular_window').append(myContent);
+
         var windowOptions = {
-            //maxWidth: 1000,
             content: myContent
         }
 

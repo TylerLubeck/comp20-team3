@@ -30,18 +30,8 @@ app.all('*', function(req, res, next) {
 
 
 app.get('/station_info', function(request, response){
-	station = request.query.station;
-	user = request.query.username;
-	if(!user){
-	console.log(station);
+	station = request.body.station;
 	db.stationRatings.find({'station':station}, function(err, cursor){
-		if(err){
-			response.send('error');
-		}
-		console.log(cursor);
-		response.send(cursor);
-	});}
-	else db.stationRatings.find({'station':station, 'user': user}, function (err, cursor){
 		if(err){
 			response.send('error');
 		}
