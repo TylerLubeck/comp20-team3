@@ -11,9 +11,8 @@ var dbURL = process.env.MONGOLAB_URI ||
             process.env.MONGOHQ_URL ||
             'mongodb://localhost/mydb';
 
-var collections = ['users', 'radioInfo', 'stationRatings'];            
+var collections = ['users', 'radioInfo', 'stationRatings'];                 
 var db = require('mongojs').connect(dbURL, collections);
-   
 var app = express();
 
 /* Allow cross-domain access */
@@ -27,28 +26,37 @@ app.all('*', function(req, res, next) {
 });
 
 
-
-//app.get('/station_info', function(request, response){
-//	station = request.query.station;
-//	console.log(station);
-//	db.stationRatings.find({'station':station}, function(err, cursor){
-//		if(err){
-//			response.send('error');
-//		}
-//		console.log(cursor);
-//		response.send('you got here');
-//	});
+app.get('/station_info', function(request, response){
+	station = request.query.station;
+	user = request.query.username;
+	if(!user){
+	console.log(station);
+	db.stationRatings.find({'station':station}, function(err, cursor){
+		if(err){
+			response.send('error');
+		}
+		console.log(cursor);
+		response.send(cursor);
+	});}
+	else db.stationRatings.find({'station':station, 'user': user}, function (err, cursor){
+		if(err){
+			response.send('error');
+		}
+		console.log(cursor);
+		response.send(cursor);
+	});
 	
-//});
+});
 
-//app.post('/station_rating', function(request, response)){
-//	station = request.body.station;
-//	rating = request.body.rating;
-//	db.stationRatings.save({'station':station, 'rating':rating, 'user':localStorage.username});
-//	response.send('success');
-//}
+app.post('/station_rating', function(request, response){
+	station = request.body.station;
+	rating = request.body.rating;
+	user = request.body.user;
+	db.stationRatings.save({'station':station, 'rating':rating, 'user':user});
+	response.send("<script> window.location.href = 'http://roadtriprocking.com/front_end/index.html'; </script>");
+});
 
-   
+
 /* use site.com/login.json?UN=XXXXX&PW=XXXXX
  *
  * Returns true or false, if the password matches the account.
@@ -73,6 +81,13 @@ app.get('/login.json', function(request, response) {
 
            response.send('false');
     });
+    /*
+    if(cursor && cursor.password == password) {
+        response.send({'name':cursor.realName}); 
+    } else {
+        response.send('false');
+    }
+    */
 });
 
 
