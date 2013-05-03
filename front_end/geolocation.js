@@ -84,7 +84,7 @@ function showPosition(position)
         }
 
         rank_form = "";
-        rank_form += '<form action="http:\/\/afternoon-anchorage-3983.herokuapp.com" method="post">';
+        rank_form += '<form action="http:\/\/afternoon-anchorage-3983.herokuapp.com/station_rating" method="post">';
         rank_form += '<select name="stations">';
 
         for(var i = 0; i < 5; i++) {
