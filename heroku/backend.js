@@ -11,7 +11,7 @@ var dbURL = process.env.MONGOLAB_URI ||
             process.env.MONGOHQ_URL ||
             'mongodb://localhost/mydb';
 
-var collections = ['users', 'radioInfo'];            
+var collections = ['users', 'radioInfo', 'stationRatings'];            
 var db = require('mongojs').connect(dbURL, collections);
    
 var app = express();
@@ -25,6 +25,26 @@ app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     next();
 });
+
+app.get('/station_info', function(request, response){
+	station = request.body.station;
+	db.stationRatings.find({'station':station}, function(err, cursor){
+		if(err){
+			response.send('error');
+		}
+		console.log(cursor);
+		response.send(cursor);
+	}
+	
+}
+
+app.post('/station_rating', function(request, response)){
+	station = request.body.station;
+	rating = request.body.rating;
+	db.stationRatings.save({'station':station, 'rating':rating, 'user':localStorage.username});
+	response.send('sucess');
+}
+
    
 /* use site.com/login.json?UN=XXXXX&PW=XXXXX
  *

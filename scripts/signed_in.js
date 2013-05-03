@@ -11,7 +11,7 @@ if(typeof(Storage)!=="undefined")
 }
 else
 {
-    document.write("LOL");	  
+    document.write("Sorry Local Storage is not compatible on your web, so you can't sign in.");	  
 }
 
 function logout(){
