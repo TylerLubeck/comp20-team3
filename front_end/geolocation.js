@@ -82,7 +82,7 @@ function showPosition(position)
             myContent += "<td>" + closestStations[i].genre + "</td>";
             myContent += "<td>" + closestStations[i].website + "</td>";
             myContent += "<td id='tdRank" + i +"'></td>";
-            myContent += "<td></td">
+            myContent += "<td></td";
             myContent += "</tr>";
         }
         myContent += "</table>"
@@ -92,12 +92,12 @@ function showPosition(position)
             content: myContent
         }
 
-        wind = new google.maps.InfoWindow(windowOptions);
-        wind.open(map, marker);
         for(i = 0; i < 5; i++) {
                 getRank(closestStations[i].title, i);
                 //addRankButton(closestStations[i].title, i);     
         }
+        wind = new google.maps.InfoWindow(windowOptions);
+        wind.open(map, marker);
 }
 
 function top5()

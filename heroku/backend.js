@@ -65,18 +65,11 @@ app.get('/login.json', function(request, response) {
                 console.log('PASSWORD: ' + password);
                 console.log('CURSOR PASSWORD: ' + cursor[0].password);
                 console.log('USERNAME: ' + cursor[0].user);
-                response.send({'name':cursor[0].realName});
+                response.send(cursor[0].realName);
            }
 
            response.send('false');
     });
-    /*
-    if(cursor && cursor.password == password) {
-        response.send({'name':cursor.realName}); 
-    } else {
-        response.send('false');
-    }
-    */
 });
 
 
@@ -151,8 +144,9 @@ app.post('/rankStation', function(request, response) {
 app.get('/getRanking', function(request, response) {
     station = request.query.station;
     db.radioInfo.find({'station':station}, function(err, cursor) {
-        if(cursor == undefined) {
-            response.send(undefined);
+            console.log('CURSOR: ' + cursor);
+        if(cursor.length < 1) {
+            response.send('false');
         } else {
             response.send(cursor[0].average);
         }
