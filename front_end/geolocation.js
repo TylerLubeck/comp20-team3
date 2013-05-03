@@ -16,13 +16,43 @@ function generateMap()
 {
         console.log("generating map");
         latlng = new google.maps.LatLng(42.330497742, -71.095794678);
+ 
+        var styles = [
+            {
+                "featureType": "road",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    { "color": "#7f1862" }
+                ]
+            },{
+                "featureType": "administrative",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    { "color": "#002973" }
+                ]
+            },{
+                "featureType": "poi",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    { "color": "#fd7c00" }
+                ]
+            }
+        ]
+
+        var styledMap = new google.maps.StyledMapType(styles, {name: "Color"});
+
         mapOptions = {
                 zoom: 15,
                 center: latlng,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
+                mapTypeControlOptions: {
+                    mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']    
+                }
         };
         map = new google.maps.Map(document.getElementById ("map_canvas"),
                                   mapOptions);
+
+        map.mapTypes.set('map_style', styledMap);
+        map.setMapTypeId('map_style');
 }
 
 function showPosition(position)
