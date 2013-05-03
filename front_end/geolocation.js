@@ -73,7 +73,7 @@ function showPosition(position)
 
         myContent = "";
         myContent += "<h3>Radio Stations</h3>"
-        myContent += "<table>"
+        myContent += "<table id='window_table'>"
         myContent += "<tr><th>Title</th><th>Genre</th><th>Website</th>"
         top5();
         for(var i = 0; i < 5; i++) {
@@ -86,6 +86,7 @@ function showPosition(position)
         myContent += "</table>"
 
         var windowOptions = {
+            //maxWidth: 1000,
             content: myContent
         }
 
