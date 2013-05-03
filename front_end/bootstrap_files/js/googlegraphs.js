@@ -12,6 +12,8 @@
           	var count = new Array();
           	for(i = 1; i < 6; i++)
           		count[i] = 0;
+          	for(i = 0; i < data.length; i++)
+          		count[data[i].rating]++;
       
         var data = google.visualization.arrayToDataTable([
           ['Rating', 'Count'],
