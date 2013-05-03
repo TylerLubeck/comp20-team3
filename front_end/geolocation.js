@@ -102,7 +102,7 @@ function showPosition(position)
         myContent += "</table>"
         rank_form += '</select>';
         
-        myContent += "<h3>Tell us about the station you're listening to! </h3>"
+        myContent += "<h3>Rank the station you're listening to! </h3>"
 
         rank_form += ' 1 <input type="radio" name="ranking" value="1">  ';
         rank_form += '2 <input type="radio" name="ranking" value="2">  ';
