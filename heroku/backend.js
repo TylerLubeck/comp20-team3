@@ -44,7 +44,7 @@ app.post('/station_rating', function(request, response){
 	station = request.body.station;
 	rating = request.body.rating;
     user = request.body.user;
-    console.log('REQUEST IS: ' + request.body);
+    //console.log('REQUEST IS: ' + request.body);
     console.log('USER IS: ' + user);
 	db.stationRatings.save({'station':station, 'rating':rating, 'user':user});
 	response.send('success');
