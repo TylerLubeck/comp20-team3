@@ -39,29 +39,26 @@
 	<div class="gradient" id="musicinfo">
 		<h3>Your Music</h3>
 		<script>
-			var your_music = new Array();
 	$.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station0 +
 			"&username=" + localStorage.userName, function(data) {
-				document.write(data);
-
+				console.log(data);
 			});
 	$.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station1 +
 			"&username=" + localStorage.userName, function(data) {
-				your_music[1] = data[0];
+				console.log(data);
 			});
 	$.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station2 +
 			"&username=" + localStorage.userName, function(data) {
-				your_music[2] = data[0];
+				console.log(data);
 			});
 	$.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station3 +
 			"&username=" + localStorage.userName, function(data) {
-				your_music[3] = data[0];
+				console.log(data);
 			});
 	$.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station4 +
 			"&username=" + localStorage.userName, function(data) {
-				your_music[4] = data[0];
+				console.log(data);
 			});
-			console.log(your_music[0]);
 		</script>
 	</div>
 	    
