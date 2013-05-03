@@ -53,6 +53,13 @@ function generateMap()
 
 function showPosition(position)
 {
+        localStorage.station0 = closestStations[0].title;
+        localStorage.station1 = closestStations[1].title;
+        localStorage.station2 = closestStations[2].title;
+        localStorage.station3 = closestStations[3].title;
+        localStorage.station4 = closestStations[4].title;
+        localStorage.test = "HI";
+      
         latlng = new google.maps.LatLng(position.coords.latitude,
                                         position.coords.longitude);
 
@@ -121,12 +128,7 @@ function showPosition(position)
 
         wind = new google.maps.InfoWindow(windowOptions);
         wind.open(map, marker);
-        localStorage.station0 = closestStations[0].title;
-        localStorage.station1 = closestStations[1].title;
-        localStorage.station2 = closestStations[2].title;
-        localStorage.station3 = closestStations[3].title;
-        localStorage.station4 = closestStations[4].title;
-        localStorage.station4 = closestStations[4].title;                
+            
 }
 
 function top5()
