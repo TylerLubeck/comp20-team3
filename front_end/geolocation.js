@@ -85,6 +85,7 @@ function showPosition(position)
 
         rank_form = "";
         rank_form += '<form action="http:\/\/afternoon-anchorage-3983.herokuapp.com/station_rating" method="post">';
+        rank_form += '<input type="hidden" name="user" value="'+ localStorage.userName + '">';
         rank_form += '<select name="station">';
 
         for(var i = 0; i < 5; i++) {
