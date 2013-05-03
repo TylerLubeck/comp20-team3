@@ -7,6 +7,10 @@
        google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
       function drawChart() {
+          $.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station0, function(data) {
+          	console.log(data);});
+
+      
         var data = google.visualization.arrayToDataTable([
           ['Year', 'Sales', 'Expenses'],
           ['2004',  1000,      400],
