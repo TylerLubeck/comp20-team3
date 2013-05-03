@@ -1,5 +1,6 @@
 /* Set up Code... */
 var express = require('express');
+var sanitize = require('validator').sanitize;
 var SendGrid = require('sendgrid').SendGrid;
 var sendgrid = new SendGrid(
         process.env.SENDGRID_USERNAME,
@@ -11,8 +12,9 @@ var dbURL = process.env.MONGOLAB_URI ||
             process.env.MONGOHQ_URL ||
             'mongodb://localhost/mydb';
 
-var collections = ['users', 'radioInfo', 'stationRatings'];                 
+var collections = ['users', 'radioInfo', 'stationRatings'];            
 var db = require('mongojs').connect(dbURL, collections);
+   
 var app = express();
 
 /* Allow cross-domain access */
@@ -26,19 +28,10 @@ app.all('*', function(req, res, next) {
 });
 
 
+
 app.get('/station_info', function(request, response){
-	station = request.query.station;
-	user = request.query.username;
-	if(!user){
-	console.log(station);
+	station = request.body.station;
 	db.stationRatings.find({'station':station}, function(err, cursor){
-		if(err){
-			response.send('error');
-		}
-		console.log(cursor);
-		response.send(cursor);
-	});}
-	else db.stationRatings.find({'station':station, 'user': user}, function (err, cursor){
 		if(err){
 			response.send('error');
 		}
@@ -48,15 +41,20 @@ app.get('/station_info', function(request, response){
 	
 });
 
+
+
 app.post('/station_rating', function(request, response){
-	station = request.body.station;
-	rating = request.body.rating;
-	user = request.body.user;
+	station = sanitize(request.body.station).escape();
+	rating = sanitize(request.body.rating).escape();
+    user = sanitize(request.body.user).escape();
+    //console.log('REQUEST IS: ' + request.body);
+    console.log('USER IS: ' + user);
 	db.stationRatings.save({'station':station, 'rating':rating, 'user':user});
-	response.send("<script> window.location.href = 'http://roadtriprocking.com/front_end/index.html'; </script>");
+//	response.send('success');
+response.send("<script> window.location.href = 'http://roadtriprocking.com/front_end/index.html';</script>");
 });
 
-
+   
 /* use site.com/login.json?UN=XXXXX&PW=XXXXX
  *
  * Returns true or false, if the password matches the account.
@@ -81,13 +79,6 @@ app.get('/login.json', function(request, response) {
 
            response.send('false');
     });
-    /*
-    if(cursor && cursor.password == password) {
-        response.send({'name':cursor.realName}); 
-    } else {
-        response.send('false');
-    }
-    */
 });
 
 
@@ -125,9 +116,9 @@ app.get('/doesExist', function(request, response) {
  */
 
 app.post('/makeUser', function(request, response) {
-    userName = request.body.UN;
-    passWord = request.body.PW;
-    realName = request.body.realName;
+    userName = sanitize(request.body.UN).xss();
+    passWord = sanitize(request.body.PW).xss();
+    realName = sanitize(request.body.realName).xss();
     email = request.body.EM; 
     console.log(request.body);
     db.users.save({'user':userName, 'password':passWord, 'email':email,
@@ -143,8 +134,8 @@ app.post('/makeUser', function(request, response) {
 });
 
 app.post('/rankStation', function(request, response) {
-    station = request.body.station;
-    ranking = parseInt(request.body.rank);
+    station = sanitize(request.body.station).escape();
+    ranking = sanitize(parseInt(request.body.rank)).escape();
     db.radioInfo.find({'station': station}, function(err, cursor) {
         if ( cursor == undefined) {
             db.radioInfo.save({'station': station, 'rankFull': ranking, 'numRankings':1, 'average':1});
@@ -177,7 +168,7 @@ app.get('/usersearch.json', function(request, response) {
     var listenedto = [];
     db.stationRatings.find({user:username}).limit(20, function(err, scores) {
         if (err || !scores.length) {
-            listenedto = [];
+            console.log("Game not found");
         } else {
             scores.forEach(function(score) {
                 listenedto.push(score);

@@ -1,0 +1,518 @@
+commit 2e59ce59da9cba614122768268ab6b483ecf0ff6
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Fri May 3 08:40:05 2013 -0700
+
+    missed a slash
+
+commit 625d8ccee8d5b9ffc3cd9db8a6a91a22e16ffcd1
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Fri May 3 08:33:42 2013 -0700
+
+    different escaping tactic
+
+commit d740c01fae01dd37dfff40cd52fddb0353af9d32
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Fri May 3 08:29:38 2013 -0700
+
+    add validation
+
+commit ee3513991c5bbad71c1f9f5e369acf95ad887312
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Fri May 3 08:00:13 2013 -0700
+
+    object to primitive?
+
+commit f754d0338c51a7ba9571c16c60fc853e80b392cb
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Fri May 3 07:56:35 2013 -0700
+
+    removing localStorage
+
+commit cca942aacb4fe03a6bbab70322270c99d93c7c69
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Fri May 3 07:51:54 2013 -0700
+
+    fixed typo
+
+commit 930f8f4a56f86ffe559d4e34566a21ad9925dc11
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Fri May 3 07:49:54 2013 -0700
+
+    re-add station_rating
+
+commit 029968c5c976f418349c822e5c688c8a4cc484e3
+Author: Alison Tai <alictai@gmail.com>
+Date:   Fri May 3 10:03:08 2013 -0400
+
+    updating
+
+commit ec4947e0fd16a6d6391b78a75a16b51a6911c5b7
+Merge: 5b593ad 0b6abb2
+Author: Alison Tai <alictai@gmail.com>
+Date:   Fri May 3 09:53:39 2013 -0400
+
+    updating
+
+commit 5b593ada66de1e48643aa9865ccd52714cdcfeba
+Author: Alison Tai <alictai@gmail.com>
+Date:   Fri May 3 09:52:12 2013 -0400
+
+    updating
+
+commit 287d29be15007f9f5bb5e8f462a1d07ccb0fb0a4
+Author: Alison Tai <alictai@gmail.com>
+Date:   Fri May 3 09:50:31 2013 -0400
+
+    updating
+
+commit 0b6abb2090433d2d806f2fa52a7e4445cb6774df
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 05:24:54 2013 -0400
+
+    Trying to commit
+
+commit 1c83344873eaefea9a6cdafc4b16483a5714d25c
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 05:23:11 2013 -0400
+
+    Trying to commit
+
+commit 09a72a6475d69657092d488dd47d3a4ffd6f42e3
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 05:15:00 2013 -0400
+
+    Trying to commit
+
+commit 723d72b1781d105cbab068cd5c5e366e8980acd8
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 03:19:52 2013 -0400
+
+    Trying to commit
+
+commit eafbe07c83a7bb59bde6a39358c1e949b144d532
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 03:18:27 2013 -0400
+
+    Trying to commit
+
+commit 5a6276d8858ce526da82cb5cb93d8d63cf6afb30
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 03:14:18 2013 -0400
+
+    Trying to commit
+
+commit 82c830dbb743ee31b96caa184a5d11d466beca9e
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 03:05:52 2013 -0400
+
+    Trying to commit
+
+commit e86367acc7e4428eeea5045c5ad281ae30058595
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 02:55:12 2013 -0400
+
+    Trying to commit
+
+commit 19d2b5215f2f1a098a872ebbd414331c558d7c8f
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 02:52:04 2013 -0400
+
+    Trying to commit
+
+commit 168b4a1413964764303a3dcd689ad6e98b406d18
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 02:47:34 2013 -0400
+
+    Trying to commit
+
+commit 826134a04fd3afff7a205c325d71d29c04f28ee2
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 02:44:38 2013 -0400
+
+    Trying to commit
+
+commit c7ab8071b34b48083813b207d2f39017b56ac5be
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 02:41:37 2013 -0400
+
+    Trying to commit
+
+commit adca21d2b71ce9d2b21da1c85e12c5b2b0ddb913
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 02:32:04 2013 -0400
+
+    Trying to commit
+
+commit a9b5790b0a8c4bbc3a7b6819dd8c6373f0587d17
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 02:24:52 2013 -0400
+
+    Trying to commit
+
+commit 31ad8367dfa1ef121383ab1cd100a49eb08939a4
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 02:21:55 2013 -0400
+
+    Trying to commit
+
+commit e3b9bcb603ffc77fe07044b6bea6f17ec04ef5a1
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 02:20:38 2013 -0400
+
+    Trying to commit
+
+commit d2febb20ee51fe94e1543c0edbb9dc742229ef03
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 02:17:46 2013 -0400
+
+    Trying to commit
+
+commit 44a833a2ade99ba188f7c0ae184f54fbf736a69e
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 02:16:08 2013 -0400
+
+    Trying to commit
+
+commit 6483ff0c852dbc7d09706225b0474bcee69492a5
+Merge: d8d6b47 2f93e0a
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 02:12:12 2013 -0400
+
+    Trying to commit
+
+commit d8d6b477d63ea0302aceea560ca5df36c451f260
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 02:12:02 2013 -0400
+
+    Trying to commit
+
+commit 55e4d8e58fc6bddd9abc19d10b121a87ed2cb1ad
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 02:07:48 2013 -0400
+
+    Trying to commit
+
+commit 60478c55cf045a96b88bc38e159d9b69c0699036
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 02:03:39 2013 -0400
+
+    working on station ratings
+
+commit eda220e074ac91aaa018b9edcac5f01ecf39f4c3
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 01:54:56 2013 -0400
+
+    working on station ratings
+
+commit 077e146b0fcf16044d20a6bca978610048598bb3
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Fri May 3 01:47:57 2013 -0400
+
+    working on station ratings
+
+commit 2f93e0aa2414bd6ed5369c6b5cd4421c6209426b
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 22:18:36 2013 -0700
+
+    removed {}
+
+commit f7c71b4d8000dd18168845993ed4d1e1589e5c4a
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 22:16:37 2013 -0700
+
+    change response
+
+commit 60128106613e0e4d91f09b50e75a67558d4e222d
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 22:01:01 2013 -0700
+
+    change to less than
+
+commit f344cd20406e64ac67fdfe1aa45fffe0b3aecd2a
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 21:58:21 2013 -0700
+
+    add debug
+
+commit 1ae708bfeb95e884d721fb33c8d86cf5d17cc840
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 21:56:22 2013 -0700
+
+    send false not 5
+
+commit 7eab75bf913c6ecfe34eab4b0a4e086ea41bc873
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 21:51:38 2013 -0700
+
+    add ranking
+
+commit a3ef05c83c32195dfcfd039b6a8ae6c885b0c2fa
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 20:49:22 2013 -0700
+
+    added ability to rank station
+
+commit 1928fed4fed348c5b5818945fb8679c9ecda4fa1
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 20:18:27 2013 -0700
+
+    fix typo
+
+commit ecefaf39dd554bc417a79aa93d9ae402d4b29375
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 20:14:04 2013 -0700
+
+    added sendgrid
+
+commit 66ff0c6b9f5c6fe9f53eeafae5fb903853caf52c
+Author: Alison Tai <alictai@gmail.com>
+Date:   Thu May 2 15:42:14 2013 -0400
+
+    updated front end
+
+commit 71b5cd22cfe6e0f3be23a0a3dff4d8eb585bf4c8
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 11:33:09 2013 -0700
+
+    typo damnit
+
+commit 27efdb54252235a04487a822d707fe5c5308c50f
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 11:31:06 2013 -0700
+
+    index the array
+
+commit 715e4ac67a7008a77e7c9cc723096297912a6ec7
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 11:25:37 2013 -0700
+
+    query not body
+
+commit 8fbdb4353b8099a721c5aa69e6b628889a0320c1
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 11:18:33 2013 -0700
+
+    aaaaand more debug messages
+
+commit 5369595aa2a491ddbf5baad223ef1b05d935f81b
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 11:14:40 2013 -0700
+
+    more debug messages
+
+commit 07decdc88ced73ab81f5505b6c3ae303fd50eb24
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 11:11:20 2013 -0700
+
+    changed how I access the cursor
+
+commit 6bb57768c66628284fa8546d8ace90b8dbc4e378
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 11:04:12 2013 -0700
+
+    more debug messages
+
+commit 332385d3e85513eb6cc4f08796088bbaca4527dc
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 10:31:05 2013 -0700
+
+    debug message
+
+commit 65419853046509dfd3b7028c00bbda7f04751404
+Merge: 1eef14f 408d36c
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 10:31:01 2013 -0700
+
+    Merge branch 'master' of heroku.com:afternoon-anchorage-3983
+
+commit 1eef14f555791d78382b14efcb1222b6a6238964
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Thu May 2 10:28:33 2013 -0700
+
+    debug message
+
+commit 408d36c01ca787af7c1c8bfc860713a37510e15c
+Author: Alison Tai <alictai@gmail.com>
+Date:   Wed May 1 01:33:09 2013 -0400
+
+    adding ali
+
+commit a5850318740382cfd70d9ca7aecf52533ac718aa
+Author: Joe <joseph.canuel@tufts.edu>
+Date:   Wed May 1 01:30:19 2013 -0400
+
+    adding joe
+
+commit 1ac1c5aeff7af3cde80b204725e8ea8812f97815
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 22:14:06 2013 -0700
+
+    debug message
+
+commit c8ba337a49663ce71e5dd8710af8c394c309874a
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 22:11:39 2013 -0700
+
+    debug message
+
+commit aa74dceea3ef263efa5505080d8f99a3e197f217
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 22:07:25 2013 -0700
+
+    remove field limit
+
+commit 201abd7fd84d242a13d983d14a3258d098e84d42
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 22:05:00 2013 -0700
+
+    log?
+
+commit 21dcad2982406fc8065b0fc1898d4cf9fde15d53
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 22:00:23 2013 -0700
+
+    log?
+
+commit a8fb53bb32f68d21c0f3b265b19b02a6912d1369
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 21:55:20 2013 -0700
+
+    added in username
+
+commit b8645c4a74be64e2d51a520618add69b88203796
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 21:43:09 2013 -0700
+
+    changed to body for login
+
+commit b75d06a912d630d16e4f5c4aaaade923c2028ae3
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 21:23:11 2013 -0700
+
+    actually used bodyparser
+
+commit 5d8776053e4f74c4fdd0e776cdd4a42cefcb7952
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 21:20:42 2013 -0700
+
+    added bodyparser
+
+commit 5c8226a655ea07732fa781488d4e925f66f91c22
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 21:03:28 2013 -0700
+
+    fucking stars this time
+
+commit 52f93892e584b1be26a3015d00bad40e22faf315
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 20:48:49 2013 -0700
+
+    FUCK EXPRESS
+
+commit 5fd9d0a15afda8f29fde759bf62e234946931826
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 20:42:17 2013 -0700
+
+    added mathods
+
+commit b4dae531e8eb41c290913b9b81b2423afa151a37
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 20:05:51 2013 -0700
+
+    fucking CORS
+
+commit 2309ab45a03096ff16f3217418eeb896e5ef668e
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 19:46:42 2013 -0700
+
+    Curl can blow me
+
+commit c229e4ccd131c56b9baf9e6f9cd0d4be87861de7
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 19:05:09 2013 -0700
+
+    suck a big dick
+
+commit 799dfaf242250f7c861469faa3d91c96a89fb4bb
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 18:53:19 2013 -0700
+
+    suck a big dick
+
+commit 46dc0673cff5160ced96922da2548590cb43bebc
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 18:47:56 2013 -0700
+
+    added 404
+
+commit 8eb43a37c93894db9ec4fb8370a6db788db22093
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 18:24:30 2013 -0700
+
+    Fixed some bugs
+
+commit 3375343a28f4b6f2a5dafd47068013d7e0fb1f6f
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 17:41:24 2013 -0700
+
+    Test Script
+
+commit ef09fd10b3cffb3ba5fa901f466be87e3fa1c3c8
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 30 17:25:39 2013 -0700
+
+    Pushing again
+
+commit e40bfb7bdb0aeafe33b86498db861a72bab05736
+Author: = <tyler@tylerlubeck.com>
+Date:   Wed Apr 24 15:14:51 2013 -0700
+
+    fixed doesExist
+
+commit 52e3f9d782a1a9be958e81a5f5796162b556420b
+Author: = <tyler@tylerlubeck.com>
+Date:   Tue Apr 23 09:29:39 2013 -0700
+
+    Reset heroku
+
+commit 08fcdd9cf08682b475b61dcb88b125c640d4359e
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Tue Apr 9 02:12:01 2013 -0400
+
+    switched to single quotes
+
+commit 08120788e61dc3615572e8a30eba2cdb73d29bc4
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Mon Apr 8 23:48:53 2013 -0400
+
+    working api v0.1
+
+commit 7b3dea2b18bd0ac6e5d02ac2a0c809bda36fbaf2
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Mon Apr 8 19:58:29 2013 -0400
+
+    Fixed some more variables
+
+commit 9e9c39cc48cd13ccf6062f4524dfa360ed89e1fe
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Mon Apr 8 19:50:13 2013 -0400
+
+    Fixed name of variables
+
+commit 04524a21aa06d9a799e97b0bfb3256d466a89ac3
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Mon Apr 8 18:01:37 2013 -0400
+
+    Test Script
+
+commit bffe12eb660e90fb1337e766b5c9f97b285e0029
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Mon Apr 8 18:01:24 2013 -0400
+
+    Test Script
+
+commit 94a8949d8b3863e971ad065f5cf2f63930bf6152
+Author: Tyler Lubeck <tyler@tylerlubeck.com>
+Date:   Mon Apr 8 17:52:09 2013 -0400
+
+    initial heroku
