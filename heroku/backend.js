@@ -156,6 +156,22 @@ app.get('/getRanking', function(request, response) {
 });
 
 
+app.get('/usersearch.json', function(request, response) {
+    var username = request.query.username;
+    var listenedto = [];
+    db.stationRatings.find({user:username}).limit(20, function(err, scores) {
+        if (err || !scores.length) {
+            console.log("Game not found");
+        } else {
+            scores.forEach(function(score) {
+                listenedto.push(score);
+            });
+        }
+        response.set('Content-Type', 'text/json');
+        response.send(listenedto);
+    });
+});
+
 app.get('/*', function(request, response) {
 	response.send(404);
 });
