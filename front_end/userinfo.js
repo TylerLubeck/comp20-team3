@@ -54,7 +54,7 @@ function getUserInfo(username) {
     				$('#info').append(content);
     			}
     			$('#info').append("</table>")
-    		} else if (request.readyState == 4 && reqest.status == 0) {
+    		} else if (request.readyState == 4 && request.status == 0) {
     			content = "You haven't listened to anything yet!";
 				var newItem = document.createElement("P");
 				var text = document.createTextNode(content);
