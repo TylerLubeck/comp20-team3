@@ -28,18 +28,18 @@ app.all('*', function(req, res, next) {
 
 
 
-app.get('/station_info', function(request, response){
-	station = request.query.station;
-	console.log(station);
-	db.stationRatings.find({'station':station}, function(err, cursor){
-		if(err){
-			response.send('error');
-		}
-		console.log(cursor);
-		response.send('you got here');
-	});
+//app.get('/station_info', function(request, response){
+//	station = request.query.station;
+//	console.log(station);
+//	db.stationRatings.find({'station':station}, function(err, cursor){
+//		if(err){
+//			response.send('error');
+//		}
+//		console.log(cursor);
+//		response.send('you got here');
+//	});
 	
-});
+//});
 
 //app.post('/station_rating', function(request, response)){
 //	station = request.body.station;
