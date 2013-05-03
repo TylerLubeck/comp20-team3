@@ -42,7 +42,7 @@ app.post('/station_rating', function(request, response)){
 	station = request.body.station;
 	rating = request.body.rating;
 	db.stationRatings.save({'station':station, 'rating':rating, 'user':localStorage.username});
-	response.send('sucess');
+	response.send('success');
 }
 
    
