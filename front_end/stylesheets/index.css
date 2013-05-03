@@ -40,6 +40,10 @@ table
     padding: 50px;
 }
 
+a:link {color: #fd7c00;}
+a:visited {color: #7f1862;}
+a:hover{text-decoration: underline;}
+
 .header
 {
     margin-bottom: 0px;
