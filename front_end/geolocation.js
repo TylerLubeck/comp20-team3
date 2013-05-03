@@ -71,9 +71,19 @@ function showPosition(position)
 
         marker = new google.maps.Marker(markerOptions);
 
-        myContent = "<h1>You are here.</h1>";
-        top5();
+        myContent = "";
         myContent += "<h3>Radio Stations</h3>"
+        myContent += "<table>"
+        myContent += "<tr><th>Title</th><th>Genre</th><th>Website</th>"
+        top5();
+        for(var i = 0; i < 5; i++) {
+            myContent += "<tr>";
+            myContent += "<td>" + closestStations[i].title + "</td>";
+            myContent += "<td>" + closestStations[i].genre + "</td>";
+            myContent += "<td>" + closestStations[i].website + "</td>";
+            myContent += "</tr>";
+        }
+        myContent += "</table>"
 
         var windowOptions = {
             content: myContent
@@ -87,7 +97,7 @@ function top5()
 {
     stations = JSON.parse(location_json_string);
     console.log(stations);
-    nearestLoc()
+    nearestLoc();
 }
 
 function nearestLoc()
@@ -99,11 +109,13 @@ function nearestLoc()
 
             if (d < max) {  
                 closestCity = key;
+                closestStations = value;
                 max = d;
             }
         }
     });
     console.log(closestCity);
+    console.log(closestStations);
 }
 
 function distance(toLat, toLng)
