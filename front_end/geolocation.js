@@ -82,7 +82,7 @@ function showPosition(position)
             myContent += "<td>" + closestStations[i].genre + "</td>";
             myContent += "<td>" + closestStations[i].website + "</td>";
             myContent += "<td id='tdRank" + i +"'></td>";
-            myContent += "<td></td">
+            myContent += "<td></td";
             myContent += "</tr>";
         }
         myContent += "</table>"
