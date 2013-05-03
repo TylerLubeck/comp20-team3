@@ -253,4 +253,5 @@ a:hover{text-decoration: underline;}
 #cellular_window
 {
     visibility: hidden;
+    display: none;
 }
