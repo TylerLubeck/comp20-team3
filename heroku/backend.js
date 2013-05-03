@@ -34,7 +34,7 @@ app.get('/station_info', function(request, response){
 		}
 		console.log(cursor);
 		response.send(cursor);
-	}
+	});
 	
 }
 
