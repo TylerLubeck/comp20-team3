@@ -8,6 +8,7 @@ function getRank(stationName, i) {
         tdRankI.text(data);
     });
 }
+
 /*
 function addRankButton(stationName, i) {
     $('#tdRankButton' + i).click(function() {
