@@ -85,7 +85,7 @@ function showPosition(position)
 
         rank_form = "";
         rank_form += '<form action="http:\/\/afternoon-anchorage-3983.herokuapp.com/station_rating" method="post">';
-        rank_form += '<select name="stations">';
+        rank_form += '<select name="station">';
 
         for(var i = 0; i < 5; i++) {
             myContent += "<tr>";
@@ -104,11 +104,11 @@ function showPosition(position)
         
         myContent += "<h3>Rank the station you're listening to! </h3>"
 
-        rank_form += ' 1 <input type="radio" name="ranking" value="1">  ';
-        rank_form += '2 <input type="radio" name="ranking" value="2">  ';
-        rank_form += '3 <input type="radio" name="ranking" value="3">  ';
-        rank_form += '4 <input type="radio" name="ranking" value="4">  ';
-        rank_form += '5 <input type="radio" name="ranking" value="5">  ';
+        rank_form += ' 1 <input type="radio" name="rating" value="1">  ';
+        rank_form += '2 <input type="radio" name="rating" value="2">  ';
+        rank_form += '3 <input type="radio" name="rating" value="3">  ';
+        rank_form += '4 <input type="radio" name="rating" value="4">  ';
+        rank_form += '5 <input type="radio" name="rating" value="5">  ';
         rank_form += '<input type="submit" value="Submit">';
         rank_form += '</form>';
         myContent += rank_form;
