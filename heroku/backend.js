@@ -30,15 +30,25 @@ app.all('*', function(req, res, next) {
 
 
 app.get('/station_info', function(request, response){
-	station = request.body.station;
+	station = request.query.station;
+	user = request.query.username;
+	if(!user){
+	console.log(station);
 	db.stationRatings.find({'station':station}, function(err, cursor){
 		if(err){
 			response.send('error');
 		}
 		console.log(cursor);
 		response.send(cursor);
+	});}
+	else db.stationRatings.find({'station':station, 'user': user}, function (err, cursor){
+		if(err){
+			response.send('error');
+		}
+		console.log(cursor);
+		response.send(cursor);
 	});
-	
+
 });
 
 
@@ -166,7 +176,7 @@ app.get('/getRanking', function(request, response) {
 app.get('/usersearch.json', function(request, response) {
     var username = request.query.username;
     var listenedto = [];
-    db.stationRatings.find({user:username}).limit(5, function(err, scores) {
+    db.stationRatings.find({user:username}).limit(20, function(err, scores) {
         if (err || !scores.length) {
             console.log("Game not found");
         } else {
