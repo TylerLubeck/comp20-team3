@@ -74,13 +74,15 @@ function showPosition(position)
         myContent = "";
         myContent += "<h3>Radio Stations</h3>"
         myContent += "<table id='window_table'>"
-        myContent += "<tr><th>Title</th><th>Genre</th><th>Website</th>"
+        myContent += "<tr><th>Title</th><th>Genre</th><th>Website</th><th>Ranking</th><th>Rank</th>"
         top5();
         for(var i = 0; i < 5; i++) {
             myContent += "<tr>";
             myContent += "<td>" + closestStations[i].title + "</td>";
             myContent += "<td>" + closestStations[i].genre + "</td>";
             myContent += "<td>" + closestStations[i].website + "</td>";
+            myContent += "<td id='tdRank" + i +"'></td>";
+            myContent += "<td></td">
             myContent += "</tr>";
         }
         myContent += "</table>"
@@ -92,6 +94,10 @@ function showPosition(position)
 
         wind = new google.maps.InfoWindow(windowOptions);
         wind.open(map, marker);
+        for(i = 0; i < 5; i++) {
+                getRank(closestStations[i].title, i);
+                //addRankButton(closestStations[i].title, i);     
+        }
 }
 
 function top5()
