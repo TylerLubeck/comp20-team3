@@ -5,7 +5,7 @@
        google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart0);
       google.setOnLoadCallback(drawChart1);
-      google.setOnLoadCallback(drawChart2);
+      google.setOnLoadCallback(drawChart10);
       google.setOnLoadCallback(drawChart3);
       google.setOnLoadCallback(drawChart4);
       function drawChart0() {
@@ -56,7 +56,7 @@
         chart.draw(data, options);
       });
      }
-      function drawChart2() {
+    function drawChart10() {
           $.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station1, function(data) {
           	console.log(data);
           	var count = new Array();
@@ -76,10 +76,11 @@
           title: localStorage.station1,
           hAxis: {title: 'Rating', titleTextStyle: {color: 'red'}}
         };
-        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div2'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div10'));
         chart.draw(data, options);
       });
      }
+
 
                 function drawChart3() {
           $.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station3, function(data) {
