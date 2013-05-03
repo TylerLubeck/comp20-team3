@@ -102,6 +102,7 @@ table
 #map_canvas
 {
     visibility: hidden;
+    display: none;
 }
 
 #logo
