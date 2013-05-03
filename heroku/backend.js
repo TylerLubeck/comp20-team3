@@ -28,6 +28,7 @@ app.all('*', function(req, res, next) {
 
 app.get('/station_info', function(request, response){
 	station = request.query.station;
+	console.log(station);
 	db.stationRatings.find({'station':station}, function(err, cursor){
 		if(err){
 			response.send('error');
