@@ -125,12 +125,8 @@ function showPosition(position)
         localStorage.station1 = closestStations[1].title;
         localStorage.station2 = closestStations[2].title;
         localStorage.station3 = closestStations[3].title;
-<<<<<<< HEAD
         localStorage.station4 = closestStations[4].title;
-=======
         localStorage.station4 = closestStations[4].title;                
-        
->>>>>>> master
 }
 
 function top5()
