@@ -12,26 +12,22 @@
           	var count = new Array();
           	for(i = 1; i < 6; i++)
           		count[i] = 0;
-          	for(i = 0; i < data.length; i++)
-	          	count[data[i].rating]++;
-	        for(i = 1; i < 6; i++)
-          		console.log(count[i]);
-          	
-          	});
       
         var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540]
+          ['Rating', 'Count'],
+          ['1',       count[1]],
+          ['2',  	  count[2]],
+          ['3',       count[3]],
+          ['4',  	  count[4]]
+          ['5',  	  count[5]]
         ]);
 
         var options = {
-          title: 'Company Performance',
-          hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}
+          title: localStorage.station0,
+          hAxis: {title: 'Rating', titleTextStyle: {color: 'red'}}
         };
 
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
         chart.draw(data, options);
-      }
+      });
+     }
