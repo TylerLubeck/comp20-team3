@@ -13,7 +13,7 @@
           	for(i = 1; i < 6; i++)
           		count[i] = 0;
           	});
-          	for(i = 0; i < data.length; i++){
+          	for(i = 0; i < data.length(); i++){
           		console.log(i);
           	}
 
