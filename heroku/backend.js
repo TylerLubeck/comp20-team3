@@ -1,10 +1,17 @@
 /* Set up Code... */
 var express = require('express');
+var SendGrid = require('sendgrid').SendGrid;
+var sendgrid = new SendGrid(
+        process.env.SENDGRID_USERNAME,
+        process.env.SENDGRID_PASSWORD
+        );
+
+
 var dbURL = process.env.MONGOLAB_URI ||
             process.env.MONGOHQ_URL ||
             'mongodb://localhost/mydb';
 
-var collections = ['users'];            
+var collections = ['users', 'radioInfo'];            
 var db = require('mongojs').connect(dbURL, collections);
    
 var app = express();
@@ -27,15 +34,29 @@ app.all('*', function(req, res, next) {
  *           Potentially 64-bit encode password on client side?
  */
 app.get('/login.json', function(request, response) {
-    userName = request.body.UN;
-    password = request.body.PW;
-    cursor = db.users.find({'user':userName});
-    console.log(cursor);
+    userName = request.query.UN;
+    password = request.query.PW;
+    db.users.find({'user':userName}, function(err, cursor) {
+           if(err) {
+                response.send('false');
+           }
+           console.log(cursor);
+           if ( cursor && cursor[0].password == password ) {
+                console.log('PASSWORD: ' + password);
+                console.log('CURSOR PASSWORD: ' + cursor[0].password);
+                console.log('USERNAME: ' + cursor[0].user);
+                response.send({'name':cursor[0].realName});
+           }
+
+           response.send('false');
+    });
+    /*
     if(cursor && cursor.password == password) {
         response.send({'name':cursor.realName}); 
     } else {
         response.send('false');
     }
+    */
 });
 
 
@@ -56,8 +77,6 @@ app.get('/doesExist', function(request, response) {
             response.send('error');
             return;
         }
-	console.log(cursor);
-    console.log('cursor length is: ' + cursor.length);
         if (cursor.length > 0 ) {
             response.send('true');   
         } else {
@@ -82,7 +101,42 @@ app.post('/makeUser', function(request, response) {
     console.log(request.body);
     db.users.save({'user':userName, 'password':passWord, 'email':email,
                     'realName':realName});
+    sendgrid.send({
+        'to': email,
+        'from': 'tyler@tylerlubeck.com',
+        'subject': 'Welcome to RoadTripRockin!',
+        'text': 'Welcome to RoadTripRocking! We\'re delighted that you\'ve joined our endeavor to fill your trips with tunes!'
+    });
+
     response.send('success');
+});
+
+app.post('/rankStation', function(request, response) {
+    station = request.body.station;
+    ranking = parseInt(request.body.rank);
+    db.radioInfo.find({'station': station}, function(err, cursor) {
+        if ( cursor == undefined) {
+            db.radioInfo.save({'station': station, 'rankFull': ranking, 'numRankings':1, 'average':1});
+        }
+        else {
+            tempRankFull = cursor[0].rankFull + ranking;
+            tempNumRanks = cursor[0].numRankings + 1;
+            tempAverage = Math.floor(tempRanking / tempNumRanks);
+            db.radioInfo.update(cursor[0], {'station':station, 'rankFull':tempRankFull, 'numRankings':tempNumRanks, 'average':tempAverage});
+        }
+    });
+    response.send(0);
+});
+
+app.get('/getRanking', function(request, response) {
+    station = request.query.station;
+    db.radioInfo.find({'station':station}, function(err, cursor) {
+        if(cursor == undefined) {
+            response.send(undefined);
+        } else {
+            response.send(cursor[0].average);
+        }
+    });
 });
 
 
