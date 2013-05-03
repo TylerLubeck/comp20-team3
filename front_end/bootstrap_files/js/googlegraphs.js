@@ -9,12 +9,13 @@
       function drawChart() {
           $.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station0, function(data) {
           	console.log(data);
-          	var x = data;
-          	localStorage.testing = data;
           	var count = new Array();
           	for(i = 1; i < 6; i++)
           		count[i] = 0;
           	});
+          	for(i = 0; i < data.length; i++){
+          		console.log(i);
+          	}
 
       
         var data = google.visualization.arrayToDataTable([
