@@ -1,10 +1,8 @@
 function initialize()
 {
-        console.log("initializing")
         if (navigator.geolocation) {
-                console.log("found geolocation");
                 generateMap();
-                console.log("map generated");
+                top5();
                 navigator.geolocation.getCurrentPosition(showPosition);
         } else {
                 document.getElementById("map_canvas").innerHTML =
@@ -14,7 +12,6 @@ function initialize()
 
 function generateMap()
 {
-        console.log("generating map");
         latlng = new google.maps.LatLng(42.330497742, -71.095794678);
  
         var styles = [
@@ -55,6 +52,13 @@ function generateMap()
         map.setMapTypeId('map_style');
 }
 
+function top5()
+{
+    $.getJSON("radio_stations_with_latlon.json", function(json) {
+        console.log(json);
+    });
+}
+
 function showPosition(position)
 {
         console.log("got position")
@@ -76,6 +80,11 @@ function showPosition(position)
         marker = new google.maps.Marker(markerOptions);
 
         myContent = "<h1>You are here.</h1>";
+        myContent += "<h3>Radio Stations</h3>"
+
+        var windowOptions = {
+            content: myContent
+        }
 
         wind = new google.maps.InfoWindow(windowOptions);
         wind.open(map, marker);
