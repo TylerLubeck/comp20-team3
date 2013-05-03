@@ -2,7 +2,6 @@ function initialize()
 {
         if (navigator.geolocation) {
                 generateMap();
-                top5();
                 navigator.geolocation.getCurrentPosition(showPosition);
         } else {
                 document.getElementById("map_canvas").innerHTML =
@@ -52,12 +51,6 @@ function generateMap()
         map.setMapTypeId('map_style');
 }
 
-function top5()
-{
-    stations = JSON.parse(location_json_string);
-    console.log(stations);
-}
-
 function showPosition(position)
 {
         console.log("got position")
@@ -79,6 +72,7 @@ function showPosition(position)
         marker = new google.maps.Marker(markerOptions);
 
         myContent = "<h1>You are here.</h1>";
+        top5();
         myContent += "<h3>Radio Stations</h3>"
 
         var windowOptions = {
@@ -87,4 +81,48 @@ function showPosition(position)
 
         wind = new google.maps.InfoWindow(windowOptions);
         wind.open(map, marker);
+}
+
+function top5()
+{
+    stations = JSON.parse(location_json_string);
+    console.log(stations);
+    nearestLoc()
+}
+
+function nearestLoc()
+{
+    max = 250000;
+    $.each(stations, function(key, value) {
+        if(value.latitude != null && value.longitude!= null) {
+            var d = distance(value.latitude, value.longitude);
+
+            if (d < max) {  
+                closestCity = key;
+                max = d;
+            }
+        }
+    });
+    console.log(closestCity);
+}
+
+function distance(toLat, toLng)
+{
+        var R = 6371 / 1.609344;
+        var x1 = toLat - myLat;
+        var dLat = toRad(x1);
+        var x2 = toLng - myLng;
+        var dLon = toRad(x2);
+        var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
+                Math.cos(toRad(myLat)) * Math.cos(toRad(toLat)) * 
+                Math.sin(dLon/2) * Math.sin(dLon/2); 
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+        var d = R * c; 
+
+        return d; 
+}
+
+function toRad(degrees)
+{
+        return degrees * Math.PI / 180;
 }
