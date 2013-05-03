@@ -39,7 +39,7 @@
 	<div class="gradient" id="musicinfo">
 		<h3>Your Music</h3>
 		<script>
-			var your_music = new Array();;
+			var your_music = new Array();
 	$.get('http://afternoon-anchorage-3983.herokuapp.com/station_info?station=' + localStorage.station0 +
 			"&username=" + localStorage.userName, function(data) {
 				your_music[0] = data[0];
