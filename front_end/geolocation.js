@@ -58,7 +58,6 @@ function showPosition(position)
         localStorage.station2 = closestStations[2].title;
         localStorage.station3 = closestStations[3].title;
         localStorage.station4 = closestStations[4].title;
-        localStorage.test = "HI";
       
         latlng = new google.maps.LatLng(position.coords.latitude,
                                         position.coords.longitude);
