@@ -121,8 +121,9 @@ function showPosition(position)
         rank_form += '</form>';
         myContent += rank_form;
 
+        $('#cellular_window').append(myContent);
+
         var windowOptions = {
-            //maxWidth: 1000,
             content: myContent
         }
 
