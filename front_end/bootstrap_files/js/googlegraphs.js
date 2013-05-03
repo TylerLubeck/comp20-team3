@@ -12,10 +12,11 @@
           	var count = new Array();
           	for(i = 1; i < 6; i++)
           		count[i] = 0;
-
-          	for(i = 0; i < data.length; i++){
-          		console.log(i);
-          	}
+          	for(i = 0; i < data.length; i++)
+	          	count[data[i].rating]++;
+	        for(i = 1; i < 6; i++)
+          		console.log(count[i]);
+          	
           	});
       
         var data = google.visualization.arrayToDataTable([
