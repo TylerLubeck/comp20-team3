@@ -51,7 +51,7 @@ app.post('/station_rating', function(request, response){
     console.log('USER IS: ' + user);
 	db.stationRatings.save({'station':station, 'rating':rating, 'user':user});
 //	response.send('success');
-response.send("<script> window.location.href = 'http:/roadtriprocking.com/front_end/index.html';</script>");
+response.send("<script> window.location.href = 'http://roadtriprocking.com/front_end/index.html';</script>");
 });
 
    
