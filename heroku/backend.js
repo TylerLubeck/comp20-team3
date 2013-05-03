@@ -27,7 +27,7 @@ app.all('*', function(req, res, next) {
 });
 
 app.get('/station_info', function(request, response){
-	station = request.body.station;
+	station = request.query.station;
 	db.stationRatings.find({'station':station}, function(err, cursor){
 		if(err){
 			response.send('error');
@@ -36,7 +36,7 @@ app.get('/station_info', function(request, response){
 		response.send(cursor);
 	});
 	
-}
+});
 
 app.post('/station_rating', function(request, response)){
 	station = request.body.station;
