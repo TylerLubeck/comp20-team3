@@ -1,0 +1,36 @@
+div.imageWrapper
+{
+    display: inline-block;
+}
+
+.imageWrapper {
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+
+.imageWrapper img {
+    display: block;
+}
+
+.imageWrapper .cornerLink {
+    opacity: 0;
+    position: absolute;
+    bottom: 55px;
+    left: 0px;
+    right: 0px;
+    padding: 10px 0px;
+    color: #000000;
+    background: #ffffff;
+    text-decoration: none;
+    text-align: left;
+    padding-left: 10px;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms;
+}
+
+.imageWrapper:hover .cornerLink {
+    opacity: 0.75;
+}

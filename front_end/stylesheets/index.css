@@ -10,6 +10,7 @@ body
     height: 70%;
     margin : 0px;
     padding: 0px;
+    text-align: center;
 }
 
 P
@@ -69,13 +70,8 @@ a:hover{text-decoration: underline;}
 {
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 10px;
-    margin-right: 10px;
-    height: 300px;
-    width: 400px;
     background-color: #E0E0E0;
     border-radius: 15px;
-    float: right;
 }
 
 .bio_name
@@ -87,30 +83,22 @@ a:hover{text-decoration: underline;}
 
 .bio_image
 {
-    height: 300px;
-    width: 300px;
+    height: 350px;
+    width: 350px;
     text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.3);
-    padding-left: 40px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    border-radius: 100px;
 }
 
 .bio_div
 {
-    height: 400px;
     width: 850px;
 }
 
 .bio_head
 {
-    height: 70px;
-    width: 800px;
-    background-color: #E0E0E0;
     border-radius: 15px;
     padding-top: 10px;
-    margin-left: 40px;
-
+    padding-bottom: 5px;
 }
 
 .gradient 
@@ -125,6 +113,11 @@ a:hover{text-decoration: underline;}
     box-shadow: inset #D0D0D0 0 1px 0,
                 inset #F0F0F0 0 -1px 0,
                 rgba(0,0,0,0.25) 0 1px 5px;
+}
+
+.center {
+    margin: 0px auto;
+    text-align: left;
 }
 
 #login
