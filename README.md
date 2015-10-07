@@ -1,3 +1,7 @@
+# Dear current Comp 20 Students
+
+Does Ming still link to this project on the final assignment instructions? He shouldn't. This is _bad code_. It's also using very old versions of express, mongo, and even node itself, so the code constructs likely won't be the same as what you're going to need. Feel free to poke around and laugh at it, but don't think that it's a good example of a well written node application. 
+
 [mockup]: readme_images/mock_ups.png
 
 ##Road Trip Rockin'##
